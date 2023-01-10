@@ -1,0 +1,29 @@
+---
+export async function getStaticPaths() {
+    return [
+        {params: {city: "blandford-forum"}, props: {title: "Blandford Forum"}},
+        {params: {city: "bournemouth"}, props: {title: "Bournemouth"}},
+        {params: {city: "christchurch"}, props: {title: "Christchurch"}},
+        {params: {city: "dorchester"}, props: {title: "Dorchester"}},
+        {params: {city: "ferndown"}, props: {title: "Ferndown"}},
+        {params: {city: "gillingham"}, props: {title: "Gillingham"}},
+        {params: {city: "poole"}, props: {title: "Poole"}},
+        {params: {city: "ringwood"}, props: {title: "Ringwood"}},
+        {params: {city: "shaftesbury"}, props: {title: "Shaftesbury"}},
+        {params: {city: "sturminster-newton"}, props: {title: "Sturminster Newton"}},
+        {params: {city: "swanage"}, props: {title: "Swanage"}},
+        {params: {city: "verwood"}, props: {title: "Verwood"}},
+        {params: {city: "wareham"}, props: {title: "Wareham"}},
+        {params: {city: "weymouth"}, props: {title: "Weymouth"}},
+        {params: {city: "wimborne"}, props: {title: "Wimborne"}},
+    ]
+}
+
+import Layout from "../../layouts/Layout.astro";
+const { city } = Astro.params;
+const { title } = Astro.props;
+---
+
+<Layout title={title}>
+
+</Layout>

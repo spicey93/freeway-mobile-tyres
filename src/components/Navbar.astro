@@ -1,0 +1,179 @@
+---
+const tyreDropdown = {
+    title: "Mobile Tyres",
+    slug: "mobile-tyres",
+    subPages: [
+        {
+            title: "Mobile Tyre Fitting",
+            slug: "mobile-tyre-fitting"
+        },
+        {
+            title: "Emergency Mobile Tyre Fitting",
+            slug: "24-hour-mobile-tyre-fitting"
+        },
+        {
+            title: "Mobile Caravan Tyre Fitting",
+            slug: "mobile-caravan-tyre-fitting"
+        },
+        {
+            title: "Puncture Repair",
+            slug: "puncture-repair",
+        },
+        {
+            title: "Seasonal Refit",
+            slug: "seasonal-refit"
+        }
+    ]
+}
+
+const servicesDropdown = {
+    title: "Services",
+    slug: "services",
+    subPages: [
+        {
+            title: "Locking Wheel Nut Removal",
+            slug: "locking-wheel-nut-removal"
+        },
+        {
+            title: "Tyre Pressure Monitoring System",
+            slug: "tyre-pressure-monitoring-system"
+        },
+        {
+            title: "Mobile Car Battery Replacement",
+            slug: "mobile-car-battery-replacement"
+        },
+        {
+            title: "Mobile Brake Fitting",
+            slug: "mobile-brake-fitting"
+        },
+        {
+            title: "Wheel Alignment",
+            slug: "wheel-alignment"
+        },
+        {
+            title: "AlloyGator Wheel Protection",
+            slug: "alloygator-wheel-protection"
+        }
+    ]
+}
+
+const coverageDropdown = {
+    title: "Coverage",
+    slug: "coverage",
+    subPages: [
+        {
+            title: "Blandford Forum",
+            slug: "blandford-forum"
+        },
+        {
+            title: "Bournemouth",
+            slug: "bournemouth"
+        },
+        {
+            title: "Christchurch",
+            slug: "christchurch"
+        },
+        {
+            slug: "dorchester", 
+            title: "Dorchester"
+        },
+        {
+            slug: "ferndown", 
+            title: "Ferndown"
+        },
+        {
+            slug: "gillingham", 
+            title: "Gillingham"
+        },
+        {
+            slug: "poole", 
+            title: "Poole"
+        },
+        {
+            slug: "ringwood", 
+            title: "Ringwood"
+        },
+        {
+            slug: "shaftesbury", 
+            title: "Shaftesbury"
+        },
+        {
+            slug: "sturminster-newton"
+            , title: "Sturminster Newton"},
+        {
+            slug: "swanage", 
+            title: "Swanage"
+        },
+        {
+            slug: "verwood", 
+            title: "Verwood"
+        },
+        {
+            slug: "wareham", 
+            title: "Wareham"
+        },
+        {
+            slug: "weymouth", 
+            title: "Weymouth"
+        },
+        {
+            slug: "wimborne", 
+            title: "Wimborne"
+        },
+    ]
+}
+---
+
+<nav class="navbar bg-light navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="/img/logos/color-logo-no-background.png" alt="Freeway Mobile Tyres" width="200">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ms-auto">
+                <!-- Mobile Tyres -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        { tyreDropdown['title'] }
+                    </a>
+                    <ul class="dropdown-menu">
+                        { tyreDropdown.subPages.map(page => <li><a href={`/${tyreDropdown.slug}/${page.slug}`} class="dropdown-item">{page.title}</a></li>) }
+                    </ul>
+                </li>
+                <!-- Services -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        { servicesDropdown['title'] }
+                    </a>
+                    <ul class="dropdown-menu">
+                        { servicesDropdown.subPages.map(page => <li><a href={`/${servicesDropdown.slug}/${page.slug}`} class="dropdown-item">{page.title}</a></li>)}
+                    </ul>
+                </li>
+                <!-- Coverage -->
+                <li class="nav-item dropdown">
+                    <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle">
+                        { coverageDropdown['title'] }
+                    </a>
+                    <ul class="dropdown-menu">
+                        { coverageDropdown.subPages.map(page => <li><a href={`/${coverageDropdown.slug}/${page.slug}`} class="dropdown-item">{page.title}</a></li>) }
+                    </ul>
+                </li>
+                <!-- About -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <!-- Contact -->
+                <li class="nav-item">
+                    <a href="/contact" class="nav-link">Contact</a>
+                </li>
+                <!-- Blog -->
+                <li class="nav-item">
+                    <a href="/blog" class="nav-link">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
