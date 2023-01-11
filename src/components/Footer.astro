@@ -1,0 +1,136 @@
+---
+const mobileTyresUrl = "/mobile-tyres/";
+const servicesUrl = "/services/"
+
+const mobileTyresPages = [
+    {slug: "mobile-tyre-fitting", title:"Mobile Tyre Fitting"}, 
+    {slug: "24-hour-mobile-tyre-fitting", title: "Emergency Mobile Tyre Fitting"},
+    {slug: "mobile-caravan-tyre-fitting", title: "Mobile Caravan Tyre Fitting"},
+    {slug: "puncture-repair", title: "Puncture Repair"},
+    {slug: "seasonal-refit", title: "Seasonal Refit"}
+    ]
+
+const servicesPages = [
+    {slug: "locking-wheel-nut-removal", title: "Locking Wheel Nut Removal"},
+    {slug: "mobile-car-battery-replacement", title: "Mobile Car Battery Replacement"},
+    {slug: "mobile-brake-fitting", title: "Mobile Brake Fitting"},
+    {slug: "tyre-pressure-monitoring-system", title: "Tyre Pressure Monitoring System"},
+    {slug: "wheel-alignment", title: "Wheel Alignment"},
+    {slug: "alloygator-wheel-protection", title: "Alloygator Wheel Protection"},
+]
+---
+
+<footer class="mt-auto bg-dark text-white pt-5 pb-3">
+    <div class="container d-grid">
+        <div class="row">
+            <div class="col-12 row pb-4">
+                <div
+                class="col-12 col-lg-3 d-flex justify-content-center justify-content-lg-start align-items-center align-items-lg-start"
+            >
+                    <div>
+                        <a href="/">
+                            <img
+                                src="/img/logos/white-logo-no-background.png"
+                                alt="Freeway Logo"
+                                width="200"
+                                class="mb-4 mb-lg-2"
+                            />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 text-center text-lg-start">
+                    <h5 class="fw-bold">Mobile Tyres</h5>
+                    <ul class="no-bullet-points">
+                        {mobileTyresPages.map(page => (
+                            <li><a href={`${mobileTyresUrl}${page.slug}`}>{page.title}</a></li>
+                        ))}
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3 text-center text-lg-start">
+                    <h5 class="fw-bold">Services</h5>
+                    <ul class="no-bullet-points">
+                        {servicesPages.map(page => (
+                            <li><a href={`${servicesUrl}${page.slug}`}>{page.title}</a></li>
+                        ))}
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3 text-center text-lg-start">
+                    <div>
+                        <h5 class="fw-bold">Get In Touch</h5>
+                        <p class="fs-4">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span class="fw-bold"
+                                ><a href="tel:08007311260" class="social-link"
+                                    >0800 7311 260</a
+                                ></span
+                            >
+                        </p>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold">Follow Us</h5>
+                        <div
+                            class="d-flex fs-4 justify-content-center justify-content-lg-start"
+                        >
+                            <p>
+                                <a
+                                    href="https://www.facebook.com/dorsetmobiletyres"
+                                    target="_blank"
+                                    class="social-link"
+                                    ><i class="bi bi-facebook"></i
+                                ></a>
+                            </p>
+                            <p>
+                                <a
+                                    href="https://www.youtube.com/channel/UCqDgLASKb7vnOSo4t_bdV1Q"
+                                    target="_blank"
+                                    class="social-link"
+                                    ><i class="bi mx-3 bi-youtube"></i
+                                ></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="col-12 text-muted text-small">
+                <ul class="d-flex flex-column align-items-center flex-lg-row justify-content-center no-bullet-points">
+                    <li class="mx-3"><a href="/terms-and-conditions">Terms & Conditions</a></li>
+                    <li class="mx-3"><a href="/cookie-policy">Cookie Policy</a></li>
+                    <li class="mx-3"><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li class="mx-3"><a href="/site-map">Site Map</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+
+    footer li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    footer li a:hover {
+        color: #dc3545;
+    }
+
+    .social-link {
+        color: white;
+        text-decoration: none;
+    }
+
+    .social-link:hover {
+        color: #dc3545;
+    }
+
+    .no-bullet-points {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .service a {
+        color: black;
+        text-decoration: none;
+    }
+</style>

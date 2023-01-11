@@ -1,7 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+const title = "Mobile Tyres, Puncture Repairs, TPMS, Batteries"
+const bgImg = "url(/img/services/freeway-mobile-tyres.jpeg)"
+const heading = "Why Spend Hours At A Garage?"
+const tagline = "We Can Fit Your Tyres At Home, Work or Roadside"
 ---
 
-<Layout title="Freeway Mobile Tyres">
-    
+<Layout title={`${title} | Freeway Mobile Tyres`}>
+    <Hero heading={heading} tagline={tagline} bgImg={bgImg} />
+    <main class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-3 mb-lg-5">Your Local Mobile Tyre Service In Dorset</h1>
+            <div class="row text-center text-lg-start">
+                <div class="col-12 col-lg-6">
+                    <p><em>Are you stranded at the side of the road with a flat tyre? Do you need to change your old car tyres but don’t want to spend hours at a garage?</em> Well, you’ve come to the right place!</p>
+                    <p>Freeway Mobile Tyres is your local mobile tyre fitting service in Dorset. We come to your location at a time that suits you and replace your tyres today.</p>
+                    <p>We can fit tyres to most types of vehicles, including cars, vans, caravans, motorhomes, and trailers.</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <p>In addition, we are one of the few tyre services in Dorset that provide <strong>same day fitting</strong> and <strong>seven day service</strong>.</p>
+                    <p>What’s more, with an average arrival time of less than 60 minutes, we provide one of the fastest mobile tyre replacement services in the area.</p>
+                    <p>So what are you waiting for? Contact us today and experience the easy way to change your tyres!</p>
+                </div>
+            </div>
+        </div>
+    </main>
 </Layout>

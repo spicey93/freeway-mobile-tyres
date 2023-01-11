@@ -1,0 +1,37 @@
+---
+import Quote from "./Quote.astro";
+import Features from "./Features.astro";
+import Reviews from "./Reviews.astro";
+
+const {bgImg, heading, tagline} = Astro.props;
+---
+
+<section class="bg-overlay d-flex align-items-center" id="hero">
+    <div class="container">
+        <div class="row g-3 py-5">
+            <div class="col-12 col-lg-6 d-flex justify-content-center flex-column align-items-center align-items-lg-start text-light">
+                <h2 class="display-5 fw-bold text-center text-lg-start">{heading}</h2>
+                <p class="lead text-center fs-3 text-lg-start">{tagline}</p>
+                <Reviews />
+                <Features />
+            </div>
+            <div class="col-12 offset-lg-2 col-lg-4 d-flex justify-content-center align-items-center">
+                <!-- Quote Widget -->
+                <Quote />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style define:vars={{bgImg}}>
+    #hero {
+        background-image: var(--bgImg);
+        background-size: cover;
+        background-position: top;
+        min-height: 70vh;
+    }
+
+    .bg-overlay {
+        box-shadow:inset 0 0 0 2000px rgba(33, 37, 41, 0.85);
+    }
+</style>

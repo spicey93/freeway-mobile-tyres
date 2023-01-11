@@ -1,0 +1,109 @@
+<form method="post" class="bg-white p-4 border shadow-lg rounded-3" data-netlify="true" name="contact">
+    <h3 class="text-center mb-3">Get Quote</h3>
+    <div id="regSection">
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-lg text-center" placeholder="Enter Reg" id="regInput" name="Registration">
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-danger btn-lg" id="regBtn">Next</button>
+        </div>
+    </div>
+    <div id="postcodeSection" class="d-none">
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-lg text-center" placeholder="Enter Postcode" id="postcodeInput" name="Postcode">
+        </div>
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <button class="btn-dark btn btn-lg" id="backToRegBtn">Back</button>
+            </div>
+            <div class="col-6 d-grid">
+                <button class="btn btn-danger btn-lg" id="postcodeBtn">Next</button>
+            </div>
+        </div>
+    </div>
+    <div id="contactSection" class="d-none">
+        <div class="mb-2">
+            <input type="text" class="form-control form-control-lg" placeholder="Name" required name="Name" id="nameInput">
+        </div>
+        <div class="mb-2">
+            <input type="tel" class="form-control form-control-lg" placeholder="Tel" required name="Phone" id="telInput">
+        </div>
+        <div class="mb-2">
+            <input type="email" class="form-control form-control-lg" placeholder="E-Mail" required name="Email" id="emailInput">
+        </div>
+        <div class="mb-2">
+            <textarea name="Message" id="message" cols="30" rows="3" class="form-control form-control-lg" placeholder="Message" required id="messageInput"></textarea>
+        </div>
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <button class="btn-dark btn btn-lg" id="backToPostcodeBtn">Back</button>
+            </div>
+            <div class="col-6 d-grid">
+                <button class="btn btn-danger btn-lg" id="submitBtn">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    const regSection = document.getElementById("regSection")
+    const postcodeSection = document.getElementById("postcodeSection")
+    const regBtn = document.getElementById("regBtn")
+    const backToRegBtn = document.getElementById("backToRegBtn")
+    const postcodeBtn = document.getElementById("postcodeBtn")
+    const backToPostcodeBtn = document.getElementById("backToPostcodeBtn")
+    const contactSection = document.getElementById("contactSection")
+    const submitBtn = document.getElementById("submitBtn")
+
+
+    regBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const regInput = document.getElementById("regInput").value;
+        if (!regInput) {
+            alert("Enter your vehicle registration or tyre size")
+        } else {
+            regSection.classList.add("d-none")
+            postcodeSection.classList.remove("d-none")
+        }
+    })
+
+    backToRegBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        regSection.classList.remove("d-none")
+        postcodeSection.classList.add("d-none")
+    })
+
+    postcodeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const postcodeInput = document.getElementById("postcodeInput").value;
+        if (!postcodeInput) {
+            alert("Enter your postcode")
+        } else {
+            postcodeSection.classList.add("d-none")
+            contactSection.classList.remove("d-none")
+        }
+    })
+
+    backToPostcodeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        postcodeSection.classList.remove("d-none");
+        contactSection.classList.add("d-none")
+    })
+
+    submitBtn.addEventListener("click", (e) => {
+        const nameInput = document.getElementById("nameInput")
+        const telInput = document.getElementById("telInput")
+        const emailInput = document.getElementById("emailInput")
+        if (!nameInput.value) {
+            e.preventDefault();
+            alert("Enter your name")
+        } else if (!telInput.value) {
+            e.preventDefault();
+            alert("Enter your phone no.")
+        } else if (!emailInput.value) {
+            e.preventDefault();
+            alert("Enter your email")
+        }
+    })
+
+</script>
