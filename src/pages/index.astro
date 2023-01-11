@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import CTA from '../components/CTA.astro';
 const title = "Mobile Tyres, Puncture Repairs, TPMS, Batteries"
 const bgImg = "url(/img/services/freeway-mobile-tyres.jpeg)"
 const heading = "Why Spend Hours At A Garage?"
@@ -25,5 +27,51 @@ const tagline = "We Can Fit Your Tyres At Home, Work or Roadside"
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="col-10 offset-1">
+    
+                <div class="text-center py-5">
+                    <h2>Our Services</h2>
+                    <div class="row my-3 g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <Card cardTitle="Mobile Tyre Fitting" cardText="Tyres Fitted at Home, Work Or Roadside" cardLink="/tyre-services/mobile-tyre-fitting">
+                                <i class="fa-duotone fa-truck-fast fs-1 mb-3"></i>
+                            </Card>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <Card cardTitle="Puncture Repair" cardText="We'll Come To You And Fix Your Flat Tyre" cardLink="/tyre-services/puncture-repair">
+                                <i class="fa-duotone fa-tire-flat fs-1 mb-3"></i>
+                            </Card>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <Card cardTitle="Caravan Tyre Fitting" cardText="Change Your Caravan Tyres The Easy Way" cardLink="/tyre-services/mobile-caravan-tyre-fitting">
+                                <i class="fa-duotone fa-caravan-simple fs-1 mb-3"></i>
+                            </Card>
+                        </div>
+                        <!-- <div class="col-md-6 col-lg-3">
+                            <Card cardTitle="24 Hour Tyre Service" cardText="Fast Roadside Tyre Rescue - 24/7" cardLink="/tyre-services/24-hour-emergency-tyre-fitting">
+                                <i class="fa-duotone fa-car fs-1 mb-3"></i>
+                            </Card>
+                        </div> -->
+                        <div class="col-md-6 col-lg-4">
+                            <Card cardTitle="Locking Wheel Nut Removal" cardText="All Car Makes & Models Covered" cardLink="/other-services/locking-wheel-nut-removal">
+                                <i class="fa-duotone fa-wrench fs-1 mb-3"></i>
+                            </Card>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <Card cardTitle="Tyre Pressure Sensors" cardText="TPMS Diagnostics & Repair" cardLink="/other-services/tyre-pressure-sensors">
+                                <i class="fa-duotone fa-tire-pressure-warning fs-1 mb-3"></i>
+                            </Card>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <Card cardTitle="AlloyGator Wheel Protectors" cardText="Protect & Style Your Rims" cardLink="/other-services/alloygator-rim-protectors">
+                                <i class="fa-duotone fa-tire fs-1 mb-3"></i>
+                            </Card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+    <CTA />
 </Layout>

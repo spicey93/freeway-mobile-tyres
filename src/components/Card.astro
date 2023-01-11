@@ -1,0 +1,18 @@
+---
+export interface Props {
+    cardTitle: string,
+    cardText: string,
+    cardLink: string,
+}
+
+const {cardTitle, cardText, cardLink} = Astro.props;
+---
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <slot />
+        <h5 class="card-title">{cardTitle}</h5>
+        <p class="card-text">{cardText}</p>
+        <a href={cardLink} class="btn btn-outline-dark">Find Out More</a>
+    </div>
+</div>
