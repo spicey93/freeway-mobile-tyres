@@ -1,7 +1,44 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Heading from "../components/Heading.astro";
+const title = "Contact Us"
 ---
 
-<Layout title="Freeway">
-    
+<Layout title={`${title} | Freeway Mobile Tyres`}>
+    <main>
+        <!-- Heading -->
+        <Heading heading={title} />
+        <!-- Content -->
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h2>Get In Touch With Our Team</h2>
+                    <p>If you would like a quote for our services, or require more information on a particular issue, you can get in touch with us via email or using our quotation form. A member of our will respond within 24 to 48 hours of your initial contact. </p>
+                    <p>For a more immediate response, we encourage you to call us directly.</p>
+                    <div>
+                        <i class="bi bi-telephone-fill me-2"></i> 0800 7311 260
+                    </div>
+                    <div>
+                        <i class="bi bi-envelope-fill me-2"></i> contact@freewaytyres.com
+                    </div>
+                    <div>
+                        <i class="bi bi-map-fill me-2"></i> 31A Banbury Road, Nuffield Industrial Estate BH17 0GA
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Leave Us A Review!</h2>
+                    <p>We’d love to hear your feedback if you’ve recently used our service. Follow the links below to leave a review for our business.</p>
+                    <div>
+                        <i class="bi bi-google me-2"></i> Review us on <a href="https://g.page/fmtyres/review?rc">Google</a>
+                    </div>
+                    <div>
+                        <i class="bi bi-facebook me-2"></i> Review us on <a href="https://www.facebook.com/dorsetmobiletyres/reviews">Facebook</a>
+                    </div>
+                    <div>
+                        <i class="bi bi-yelp me-2"></i> Review us on <a href="https://www.yell.com/biz/freeway-mobile-tyres-poole-6691550/#reviews">Yell</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </Layout>

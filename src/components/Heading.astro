@@ -1,0 +1,13 @@
+---
+export interface Props {
+    heading: string,
+}
+
+const { heading } = Astro.props;
+---
+
+<div class="py-5 bg-secondary">
+    <div class="container">
+        <h1 class="text-center text-light fw-bold">{heading}</h1>
+    </div>
+</div>

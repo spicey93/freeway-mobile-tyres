@@ -1,7 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Heading from "../components/Heading.astro";
+
+const title = "About Us"
 ---
 
-<Layout title="Freeway">
-    
+<Layout title={`${title} | Freeway Mobile Tyres`}>
+    <main>
+        <!-- Heading -->
+        <Heading heading={title} />
+        <!-- Content -->
+        <div class="container py-5">
+            <h2>Our Mission</h2>
+            <p>At Freeway Mobile Tyres, our mission to make your life easier and save time. We do this by providing a convenient and flexible mobile tyre-fitting service at your doorstep.</p>
+            <p>Our vans are on the road 24 hours a day, 7 days a week, 365 days a year. We’re always here to help you in the event of a tyre emergency.</p>
+            <p>There’s no need to travel to a garage or sit in a waiting room. Just give us a call, and we’ll send a friendly technician to your home to fix your car while you put your feet up.</p>
+            <h2>Our Values</h2>
+            <p>As a small father & son business, we always try our best to provide the best quality tyre service to our customers. That means being open every day, providing same day fitting at no extra cost, covering most of Dorset, and employing the best tyre fitters in the area.</p>
+            <h2>Our History</h2>
+            <p>While Freeway Mobile Tyres was only established in the last few years, the two companies behind it have been in the tyre trade for over 30 years.</p>
+            <p>In August 1990, Paul Spicer started Mobile Tyres, one of the UK’s first mobile car tyre fitting companies. The idea was simple – to save the customer time and energy by bringing the tyre shop to their front door.</p>
+            <p>Stay at home mums, stranded drivers, and business people all loved the convenience that mobile tyre-fitting brings. Finally, they could have their tyres changed without having to spend hours in a garage. They could work, study, tidy up, play with the kids, or watch TV instead.</p>
+            <p>It’s only in the last ten years that the mobile tyre-fitting scene has exploded, and now it’s the preferred way for people to change their tyres.</p>
+            <p>David Buckby, the former owner of Freeway Tyres, established his tyre company in 1984. And it didn’t take long before Freeway Tyres make its footprint on the tyre industry in Dorset. </p>
+            <p>Specialising in tyres, brakes, alignments, and exhausts, Freeway Tyres was known as one of the biggest and most reputable tyre dealers in Poole, selling hundreds of tyres every day and having thousands of tyres in stock.</p>
+            <h2>Our Future</h2>
+            <p>We want to provide our mobile tyre service to all Dorset residents. To achieve this, we currently have six mobile tyre-fitting vans on the road, and we’re opening a tyre depot in Shaftesbury in the coming months.</p>
+            <p>Watch this space; Freeway Mobile Tyres could be coming to an area near you!</p>
+        </div>
+    </main>
 </Layout>
