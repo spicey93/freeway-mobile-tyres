@@ -1,8 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const title = ""
+import Heading from "../components/Heading.astro";
+const title = "Blog"
+const description = "The blog page for Freeway Mobile Tyres"
 ---
 
-<Layout title={`${title} | Freeway Mobile Tyres`}>
-    
+<Layout title={`${title} | Freeway Mobile Tyres`} description={description}>
+    <Heading heading="Blog" />
 </Layout>

@@ -4,12 +4,13 @@ import Hero from '../components/Hero.astro';
 import Card from '../components/Card.astro';
 import CTA from '../components/CTA.astro';
 const title = "Mobile Tyres, Puncture Repairs, TPMS, Batteries"
+const description = "Freeway Mobile Tyres are one of Dorset's leading mobile tyre services. We'll come to you at home, work or roadside and fit your tyres today."
 const bgImg = "url(/img/services/freeway-mobile-tyres.jpeg)"
 const heading = "Why Spend Hours At A Garage?"
 const tagline = "We Can Fit Your Tyres At Home, Work or Roadside"
 ---
 
-<Layout title={`${title} | Freeway Mobile Tyres`}>
+<Layout title={`${title} | Freeway Mobile Tyres`} description={description}>
     <Hero heading={heading} tagline={tagline} bgImg={bgImg} />
     <main class="py-5">
         <div class="container">

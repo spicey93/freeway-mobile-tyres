@@ -1,7 +1,15 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import ServicePage from "../../components/ServicePage.astro";
+
+const title = "Mobile Car Battery Replacement"
+const description = "If you've got a flat car battery, we can come to you at home or roadside and replace it today. Contact us today for a quote."
+const bgImg = "url(/img/services/mobile-car-battery-replacement.jpeg)"
+const heading = "Mobile Car Battery Replacement"
+const tagline = "We Can Replace Your Flat Battery At Your Home Or Workplace"
+const mainHeading = "Mobile Car & Van Battery Fitting"
 ---
 
-<Layout title="Freeway">
-    
-</Layout>
+<ServicePage bgImg={bgImg} title={title} heading={heading} tagline={tagline} mainHeading={mainHeading} description={description}>
+    <p>If you’ve got a flat battery on your car or van, you need a mobile service that comes to you at home or roadside. Our experienced technicians can fit your battery today at your location for no extra cost.</p>
+    <p>All of our batteries come with a built-in manufacturers warranty, and we cover many areas of Dorset, including Poole, Bournemouth and Christchurch.</p>
+</ServicePage>

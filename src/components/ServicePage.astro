@@ -5,17 +5,18 @@ import CTA from "../components/CTA.astro";
 import AsideCards from "../components/AsideCards.astro";
 
 export interface Props {
-    title: String,
-    bgImg: String,
-    heading: String,
-    tagline: String,
-    mainHeading: String,
+    title: string,
+    description: string,
+    bgImg: string,
+    heading: string,
+    tagline: string,
+    mainHeading: string,
 }
 
-const { title, bgImg, heading, tagline, mainHeading } = Astro.props;
+const { title, description, bgImg, heading, tagline, mainHeading } = Astro.props;
 ---
 
-<Layout title={`${title} | Freeway Mobile Tyres`}>
+<Layout title={`${title} | Freeway Mobile Tyres`} description={description}>
     <Hero bgImg={bgImg} heading={heading} tagline={tagline} />
     <main class="py-5">
         <div class="container">

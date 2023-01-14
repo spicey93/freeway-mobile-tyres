@@ -19,11 +19,8 @@ export async function getStaticPaths() {
     ]
 }
 
-import Layout from "../../layouts/Layout.astro";
-const { city } = Astro.params;
+import CoveragePage from "../../components/CoveragePage.astro";
 const { title } = Astro.props;
 ---
 
-<Layout title={`Mobile Tyre Fitting ${title} | Freeway Mobile Tyres`}>
-
-</Layout>
+<CoveragePage city={title} />
