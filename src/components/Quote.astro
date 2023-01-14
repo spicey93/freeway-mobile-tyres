@@ -5,7 +5,7 @@
             <input type="text" class="form-control form-control-lg text-center" placeholder="Enter Reg" id="regInput" name="Registration">
         </div>
         <div class="d-grid">
-            <button class="btn btn-danger btn-lg" id="regBtn">Next</button>
+            <button class="btn btn-info btn-lg" id="regBtn">Next</button>
         </div>
     </div>
     <div id="postcodeSection" class="d-none">
@@ -17,7 +17,7 @@
                 <button class="btn-dark btn btn-lg" id="backToRegBtn">Back</button>
             </div>
             <div class="col-6 d-grid">
-                <button class="btn btn-danger btn-lg" id="postcodeBtn">Next</button>
+                <button class="btn btn-info btn-lg" id="postcodeBtn">Next</button>
             </div>
         </div>
     </div>
@@ -39,11 +39,17 @@
                 <button class="btn-dark btn btn-lg" id="backToPostcodeBtn">Back</button>
             </div>
             <div class="col-6 d-grid">
-                <button class="btn btn-danger btn-lg" id="submitBtn">Submit</button>
+                <button class="btn btn-info btn-lg" id="submitBtn">Submit</button>
             </div>
         </div>
     </div>
 </form>
+
+<style>
+    #regInput, #postcodeInput {
+        text-transform: uppercase;
+    }
+</style>
 
 <script>
     const regSection = document.getElementById("regSection")
