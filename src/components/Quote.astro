@@ -1,5 +1,10 @@
 <form method="post" class="bg-white p-4 border shadow-lg rounded-3" data-netlify="true" name="contact">
     <h3 class="text-center mb-3">Get Quote</h3>
+    <div class="d-flex justify-content-center d-none" id="spinner">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
     <div id="regSection">
         <div class="mb-2">
             <input type="text" class="form-control form-control-lg text-center" placeholder="Enter Reg" id="regInput" name="Registration">
@@ -52,6 +57,7 @@
 </style>
 
 <script>
+    const spinner = document.getElementById("spinner")
     const regSection = document.getElementById("regSection")
     const postcodeSection = document.getElementById("postcodeSection")
     const regBtn = document.getElementById("regBtn")
@@ -60,6 +66,13 @@
     const backToPostcodeBtn = document.getElementById("backToPostcodeBtn")
     const contactSection = document.getElementById("contactSection")
     const submitBtn = document.getElementById("submitBtn")
+    function showSpinner() {
+        spinner.classList.remove("d-none")
+    }
+
+    function hideSpinner() {
+        spinner.classList.add("d-none")
+    }
 
 
     regBtn.addEventListener("click", (e) => {
@@ -68,8 +81,12 @@
         if (!regInput) {
             alert("Enter your vehicle registration or tyre size")
         } else {
-            regSection.classList.add("d-none")
-            postcodeSection.classList.remove("d-none")
+            regSection.classList.add("d-none");
+            showSpinner();
+            setTimeout(function() {
+                hideSpinner(),
+                postcodeSection.classList.remove("d-none")
+            }, 1000)
         }
     })
 
@@ -85,8 +102,12 @@
         if (!postcodeInput) {
             alert("Enter your postcode")
         } else {
-            postcodeSection.classList.add("d-none")
-            contactSection.classList.remove("d-none")
+            postcodeSection.classList.add("d-none");
+            showSpinner();
+            setTimeout(function() {
+                hideSpinner(),
+                contactSection.classList.remove("d-none")
+            }, 1000)
         }
     })
 
