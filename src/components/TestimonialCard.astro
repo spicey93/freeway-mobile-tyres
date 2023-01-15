@@ -1,0 +1,16 @@
+---
+export interface Props {
+    customerName: string,
+}
+
+const { customerName } = Astro.props;
+---
+<div class="bg-white border p-3 rounded-3">
+    <p class="fw-bold mb-0">{customerName}</p>
+    <i class="bi bi-star-fill text-warning"></i>
+    <i class="bi bi-star-fill text-warning"></i>
+    <i class="bi bi-star-fill text-warning"></i>
+    <i class="bi bi-star-fill text-warning"></i>
+    <i class="bi bi-star-fill text-warning"></i>
+    <slot />
+</div>
