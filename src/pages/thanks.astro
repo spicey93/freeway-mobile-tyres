@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Thank You"
+const description = "Thank you page for form submission on freewaymobiletyres.co.uk"
+---
+
+<Layout description={description} title={title}>
+    <section class="container py-5 d-flex align-items-center justify-content-center flex-column my-5">
+        <div class="bg-success p-4 text-light rounded-3">
+            <h2>Thank You</h2>
+            <p>Your form has been submitted successfully. A member of our team will be in touch within the next 24 hours.</p>
+            <a href="/" class="btn btn-light">Return Home</a>
+        </div>
+        <p class="fw-bold mt-3 fs-3">Need help ASAP? Call <a href="tel:08007311260">0800 7311 260</a></p>
+    </section>
+</Layout>
