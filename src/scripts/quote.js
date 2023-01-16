@@ -103,18 +103,3 @@ backToPostcodeBtn.addEventListener("click", (e) => {
     contactSection.classList.add("d-none");
 });
 
-submitBtn.addEventListener("click", (e) => {
-    const nameInput = document.getElementById("nameInput");
-    const telInput = document.getElementById("telInput");
-    const emailInput = document.getElementById("emailInput");
-    if (!nameInput.value) {
-        e.preventDefault();
-        alert("Enter your name");
-    } else if (!telInput.value) {
-        e.preventDefault();
-        alert("Enter your phone no.");
-    } else if (!emailInput.value) {
-        e.preventDefault();
-        alert("Enter your email");
-    }
-});
