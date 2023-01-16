@@ -70,17 +70,30 @@ backToRegBtn.addEventListener("click", (e) => {
     postcodeSection.classList.add("d-none");
 });
 
-postcodeBtn.addEventListener("click", (e) => {
+postcodeBtn.addEventListener("click", async (e) => {
     e.preventDefault();
     const postcodeInput = document.getElementById("postcodeInput").value;
     if (!postcodeInput) {
         alert("Enter your postcode");
     } else {
         postcodeSection.classList.add("d-none");
-        showSpinner();
-        setTimeout(function () {
-            hideSpinner(), contactSection.classList.remove("d-none");
-        }, 1000);
+        contactSection.classList.remove("d-none")
+        // postcodeSection.classList.add("d-none");
+        // showSpinner();
+        // const res = await fetch(`https://api.getAddress.io/distance/${postcodeInput}/DT117TQ?api-key=`)
+        // const data = await res.json();
+        // if (res.status !== 200 ) {
+        //     hideSpinner();
+        //     alert("Postcode does not exist.")
+        //     postcodeSection.classList.remove("d-none")
+        // } else if (data.metres > 81000) {
+        //     alert("Your postcode is outside of our normal service area.")
+        //     hideSpinner();
+        //     postcodeSection.classList.remove("d-none")
+        // } else {
+        //     hideSpinner();
+        //     contactSection.classList.remove('d-none')
+        // }
     }
 });
 
