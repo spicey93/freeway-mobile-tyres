@@ -1,5 +1,5 @@
 <form method="post" class="bg-white p-4 border shadow-lg rounded-3" action="https://formsubmit.co/45bf22321b43d3d38b562eca876202dc">
-    <h3 class="text-center mb-3">Get A Quote</h3>
+    <p class="text-center mb-3 fs-4 fw-bold">Get A Quote</p>
     <input type="hidden" name="_next" value="https://freewaymobiletyres.co.uk/thanks">
     <input type="hidden" name="_subject" value="New Quote Request!"> 
     <div class="d-flex justify-content-center d-none" id="spinner">
@@ -7,7 +7,7 @@
             <span class="visually-hidden">Loading...</span>
           </div>
     </div>
-    <div id="regSection">
+    <div id="regSection" class="">
         <div class="mb-2">
             <input type="text" class="form-control form-control-lg text-center" placeholder="Enter Reg" id="regInput" name="Registration">
         </div>
@@ -15,13 +15,37 @@
             <button class="btn btn-info btn-lg" id="regBtn">Next</button>
         </div>
     </div>
+    <div id="vehicleSection" class="text-center d-none">
+        <p class="mb-2 fs-5">Confirm Make & Model</p>
+        <!-- <p class="fw-bold"><span id="vehicleMake"></span> <span id="vehicleModel"></span></p> -->
+        <div class="mb-2">
+            <input type="text" name="Vehicle Make" id="vehicleMake" class="form-control form-control-lg text-center">
+        </div>
+        <div class="mb-2">
+            <input type="text" name="Vehicle Model" id="vehicleModel" class="form-control form-control-lg text-center">
+        </div>
+        <!-- <div class="mb-2">
+            <p class="mb-2">Confirm Tyre Size</p>
+            <select name="Tyre Size" id="tyreSizeSelect" class="form-select text-center">
+                <option value="unknown">I don't know it</option>
+            </select>
+        </div> -->
+        <div class="row g-1">
+            <div class="col-6 d-grid">
+                <a class="btn-dark btn btn-lg" id="incorrectBtn">No</a>
+            </div>
+            <div class="col-6 d-grid">
+                <button class="btn btn-info btn-lg" id="correctBtn">Yes</button>
+            </div>
+        </div>
+    </div>
     <div id="postcodeSection" class="d-none">
         <div class="mb-2">
-            <input type="text" class="form-control form-control-lg text-center" placeholder="Enter Postcode" id="postcodeInput" name="Postcode">
+            <input type="text" class="form-control text-center form-control-lg" placeholder="Enter Postcode" id="postcodeInput" name="Postcode">
         </div>
         <div class="row g-1">
             <div class="col-6 d-grid">
-                <button class="btn-dark btn btn-lg" id="backToRegBtn">Back</button>
+                <a class="btn-dark btn btn-lg" id="backToRegBtn">Back</a>
             </div>
             <div class="col-6 d-grid">
                 <button class="btn btn-info btn-lg" id="postcodeBtn">Next</button>
@@ -43,7 +67,7 @@
         </div>
         <div class="row g-1">
             <div class="col-6 d-grid">
-                <button class="btn-dark btn btn-lg" id="backToPostcodeBtn">Back</button>
+                <a class="btn-dark btn btn-lg" id="backToPostcodeBtn">Back</a>
             </div>
             <div class="col-6 d-grid">
                 <button class="btn btn-info btn-lg" id="submitBtn">Submit</button>

@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
     "astro": "^1.9.0"
   }
 }
