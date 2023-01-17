@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Error"
+const description = "Error page for form submission on freewaymobiletyres.co.uk"
+---
+
+<Layout description={description} title={title}>
+    <section class="container my-5 d-flex align-items-center justify-content-center flex-column">
+        <div class="bg-danger p-5 text-light rounded-3 text-center">
+            <h2>Oops!</h2>
+            <p class="">An error occurred. Please try again.</p>
+            <a href="/" class="btn btn-outline-light">Return Home</a>
+        </div>
+    </section>
+</Layout>
