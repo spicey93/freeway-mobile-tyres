@@ -1,105 +1,126 @@
+// Variables
 const spinner = document.getElementById("spinner");
+const urlInput = document.getElementById("urlInput");
 const regSection = document.getElementById("regSection");
-const postcodeSection = document.getElementById("postcodeSection");
 const regBtn = document.getElementById("regBtn");
+const postcodeSection = document.getElementById("postcodeSection");
+const postcodeBtn = document.getElementById("postcodeBtn");
 const vehicleSection = document.getElementById("vehicleSection");
+const vehicleMake = document.getElementById("vehicleMake");
+const vehicleModel = document.getElementById("vehicleModel");
 const correctBtn = document.getElementById("correctBtn");
 const incorrectBtn = document.getElementById("incorrectBtn");
 const backToRegBtn = document.getElementById("backToRegBtn");
-const postcodeBtn = document.getElementById("postcodeBtn");
-const backToPostcodeBtn = document.getElementById("backToPostcodeBtn");
 const contactSection = document.getElementById("contactSection");
+const backToPostcodeBtn = document.getElementById("backToPostcodeBtn");
 const submitBtn = document.getElementById("submitBtn");
-const vehicleMake = document.getElementById("vehicleMake")
-const vehicleModel = document.getElementById("vehicleModel")
 
+// Show spinner whilst waiting for data to return
 function showSpinner() {
     spinner.classList.remove("d-none");
 }
 
+// Remove spinner once the data is ready to be loaded
 function hideSpinner() {
     spinner.classList.add("d-none");
 }
 
+// When the registration button is pressed...
 regBtn.addEventListener("click", async (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    // Save the href to the form
+    urlInput.value = `${window.location.href}${window.location.search}`;
+    // Get the registration information
     const regInput = document.getElementById("regInput").value;
+    // If no registration was entered...
     if (!regInput) {
+        // Alert the user and prompt them to enter a registration
         alert("Enter your vehicle registration");
     } else {
+        // Hide the registration section of the form
         regSection.classList.add("d-none");
         showSpinner();
         // Check the registration exists
-        const res = await fetch(`https://dvlasearch.appspot.com/TyreSearch?apikey=DvlaSearchDemoAccount&licencePlate=${regInput}`)
-        const data = await res.json()
+        const res = await fetch(
+            `https://dvlasearch.appspot.com/TyreSearch?apikey=DvlaSearchDemoAccount&licencePlate=${regInput}`
+        );
+        // Parse the data
+        const data = await res.json();
+        // If there is an error in the data or it doesn't contain a vehicle make...
         if (data.error || !data.make) {
-            alert("Registration does not exist.")
+            // Alert the user that there is an issue with the registration
+            alert("Registration does not exist.");
             hideSpinner();
-            regSection.classList.remove("d-none")
+            // Take them back to the registration section
+            regSection.classList.remove("d-none");
         } else {
-            vehicleMake.value=data.make
-            vehicleModel.value=data.model
-            vehicleMake.toggleAttribute("disabled")
-            vehicleModel.toggleAttribute("disabled")
+            // Get the make and model of the vehicle
+            vehicleMake.value = data.make;
+            vehicleModel.value = data.model;
+            // Prevent the user from modifying this information
+            vehicleMake.disabled = true;
+            vehicleModel.disabled = true;
             hideSpinner();
-            vehicleSection.classList.remove("d-none")
+            // Show vehicle confirmation section
+            vehicleSection.classList.remove("d-none");
         }
     }
 });
 
+// When the user clicks the back button
 incorrectBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    // Show the registration section
     regSection.classList.remove("d-none");
+    // Hide the vehicle section
     vehicleSection.classList.add("d-none");
-    vehicleMake.toggleAttribute("disabled")
-    vehicleModel.toggleAttribute("disabled")
-})
+    // Remove the disabled class from the select elements
+    vehicleMake.disabled = false;
+    vehicleModel.disabled = false;
+});
 
+// When the user clicks the next button
 correctBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    vehicleMake.toggleAttribute("disabled")
-    vehicleModel.toggleAttribute("disabled")
+    e.preventDefault()
+    // Remove the disabled class from the select elements
+    vehicleMake.disabled = false;
+    vehicleModel.disabled = false;
+    // Hide the vehicle section
     vehicleSection.classList.add("d-none");
-    postcodeSection.classList.remove("d-none")
-    postcodeInput.focus();
-})
+    // Show the postcode section
+    postcodeSection.classList.remove("d-none");
+});
 
+// If the user wants to go back to the registration section
 backToRegBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    // Show the registration section
     regSection.classList.remove("d-none");
+    // Hide the postcode section
     postcodeSection.classList.add("d-none");
 });
 
+// If the user has submitted a postcode...
 postcodeBtn.addEventListener("click", async (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    // Get the data they have entered
     const postcodeInput = document.getElementById("postcodeInput").value;
+    // Check it's not empty
     if (!postcodeInput) {
         alert("Enter your postcode");
     } else {
+        // Hide the postcode section
         postcodeSection.classList.add("d-none");
-        contactSection.classList.remove("d-none")
-        // postcodeSection.classList.add("d-none");
-        // showSpinner();
-        // const res = await fetch(`https://api.getAddress.io/distance/${postcodeInput}/DT117TQ?api-key=`)
-        // const data = await res.json();
-        // if (res.status !== 200 ) {
-        //     hideSpinner();
-        //     alert("Postcode does not exist.")
-        //     postcodeSection.classList.remove("d-none")
-        // } else if (data.metres > 81000) {
-        //     alert("Your postcode is outside of our normal service area.")
-        //     hideSpinner();
-        //     postcodeSection.classList.remove("d-none")
-        // } else {
-        //     hideSpinner();
-        //     contactSection.classList.remove('d-none')
-        // }
+        // Show the contact section
+        contactSection.classList.remove("d-none");
     }
 });
 
+// If the user wants to go back to the postcode section
 backToPostcodeBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    // Show the postcode section
     postcodeSection.classList.remove("d-none");
+    // Hide the contact section
     contactSection.classList.add("d-none");
 });
-
