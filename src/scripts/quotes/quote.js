@@ -58,8 +58,6 @@ regBtn.addEventListener("click", async (e) => {
             vehicleMake.value = data.make;
             vehicleModel.value = data.model;
             // Prevent the user from modifying this information
-            vehicleMake.disabled = true;
-            vehicleModel.disabled = true;
             hideSpinner();
             // Show vehicle confirmation section
             vehicleSection.classList.remove("d-none");
@@ -74,17 +72,11 @@ incorrectBtn.addEventListener("click", (e) => {
     regSection.classList.remove("d-none");
     // Hide the vehicle section
     vehicleSection.classList.add("d-none");
-    // Remove the disabled class from the select elements
-    vehicleMake.disabled = false;
-    vehicleModel.disabled = false;
 });
 
 // When the user clicks the next button
 correctBtn.addEventListener("click", (e) => {
     e.preventDefault()
-    // Remove the disabled class from the select elements
-    vehicleMake.disabled = false;
-    vehicleModel.disabled = false;
     // Hide the vehicle section
     vehicleSection.classList.add("d-none");
     // Show the postcode section
