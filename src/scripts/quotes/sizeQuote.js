@@ -86,6 +86,7 @@ regBtn.addEventListener("click", async (e) => {
             hideSpinner();
             // Take them back to the registration section
             regSection.classList.remove("d-none");
+            return
         } else {
             // Get the make and model of the vehicle
             vehicleMake.value = data.make;
@@ -115,9 +116,8 @@ regBtn.addEventListener("click", async (e) => {
             // Prevent the user from pressing the next button until they select a tyre size option
             correctBtn.classList.add("disabled");
             hideSpinner();
-            // Show vehicle confirmation section
-            vehicleSection.classList.remove("d-none");
         }
+        vehicleSection.classList.remove("d-none");
     }
 });
 
