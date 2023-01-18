@@ -57,6 +57,8 @@ regBtn.addEventListener("click", async (e) => {
             // Get the make and model of the vehicle
             vehicleMake.value = data.make;
             vehicleModel.value = data.model;
+            vehicleMake.disabled = false;
+            vehicleModel.removeAttribute("disabled")
             hideSpinner();
             // Show vehicle confirmation section
             vehicleSection.classList.remove("d-none");
