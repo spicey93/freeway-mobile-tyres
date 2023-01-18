@@ -1,5 +1,5 @@
 <!-- <form method="post" class="bg-white p-4 border shadow-lg rounded-3" action="https://formsubmit.co/45bf22321b43d3d38b562eca876202dc"> -->
-    <form method="post" class="bg-white p-4 border shadow-lg rounded-3" action="https://safe-island-80193.herokuapp.com">
+    <form method="post" class="bg-white p-4 border shadow-lg rounded-3" action="https://safe-island-80193.herokuapp.com/tyre-size-quote">
         <p class="text-center mb-3 fs-4 fw-bold">Get A Quote</p>
         <!-- <input type="hidden" name="_next" value="https://freewaymobiletyres.co.uk/thanks">
         <input type="hidden" name="_subject" value="New Quote Request!">  -->
@@ -18,19 +18,17 @@
         </div>
         <div id="vehicleSection" class="text-center d-none">
             <p class="mb-2 fs-5">Confirm Make & Model</p>
-            <!-- <p class="fw-bold"><span id="vehicleMake"></span> <span id="vehicleModel"></span></p> -->
             <div class="mb-2">
                 <input type="text" name="Vehicle_Make" id="vehicleMake" class="form-control form-control-lg text-center">
             </div>
             <div class="mb-2">
                 <input type="text" name="Vehicle_Model" id="vehicleModel" class="form-control form-control-lg text-center">
             </div>
-            <!-- <div class="mb-2">
+            <div class="mb-2">
                 <p class="mb-2">Confirm Tyre Size</p>
-                <select name="Tyre Size" id="tyreSizeSelect" class="form-select text-center">
-                    <option value="unknown">I don't know it</option>
+                <select name="Tyre_Size" id="tyreSizeSelect" class="form-select form-select-lg text-center">
                 </select>
-            </div> -->
+            </div>
             <div class="row g-1">
                 <div class="col-6 d-grid">
                     <a class="btn-dark btn btn-lg" id="incorrectBtn" href="#">No</a>
@@ -84,5 +82,5 @@
     </style>
     
     <script>
-        import "../scripts/quotes/quote.js"
+        import "../scripts/quotes/sizeQuote.js"
     </script>
