@@ -86,6 +86,7 @@ regBtn.addEventListener("click", async (e) => {
             vehicleModel.toggleAttribute("disabled")
             // Clear the tyre size select options
             removeOptions(tyreSizeSelect)
+            tyreSizeSelect.options[tyreSizeSelect.options.length] = new Option("Select Tyre Size", "0")
             // Iterate through the possible sizes only return unique options
             const formattedSizes = formatSize(data.tyreFitments);
             const uniqueSizes = removeDuplicates(formattedSizes);
