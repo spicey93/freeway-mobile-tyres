@@ -115,8 +115,8 @@ regBtn.addEventListener("click", async (e) => {
             );
             // Prevent the user from pressing the next button until they select a tyre size option
             correctBtn.classList.add("disabled");
-            hideSpinner();
         }
+        hideSpinner();
         vehicleSection.classList.remove("d-none");
     }
 });
