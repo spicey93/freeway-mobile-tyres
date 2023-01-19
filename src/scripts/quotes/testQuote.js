@@ -1,6 +1,6 @@
 // Variables
 const spinner = document.getElementById("spinner");
-const urlInput = document.getElementById("urlInput")
+const urlInput = document.getElementById("urlInput");
 const regSection = document.getElementById("regSection");
 const regBtn = document.getElementById("regBtn");
 const postcodeSection = document.getElementById("postcodeSection");
@@ -8,14 +8,12 @@ const postcodeBtn = document.getElementById("postcodeBtn");
 const vehicleSection = document.getElementById("vehicleSection");
 const vehicleMake = document.getElementById("vehicleMake");
 const vehicleModel = document.getElementById("vehicleModel");
-const tyreSizeSelect = document.getElementById("tyreSizeSelect");
 const correctBtn = document.getElementById("correctBtn");
 const incorrectBtn = document.getElementById("incorrectBtn");
 const backToRegBtn = document.getElementById("backToRegBtn");
 const contactSection = document.getElementById("contactSection");
 const backToPostcodeBtn = document.getElementById("backToPostcodeBtn");
 const submitBtn = document.getElementById("submitBtn");
-let tyreSizes = []
 
 // Remove all the options from a select element
 function removeOptions(selectElement) {
@@ -61,9 +59,9 @@ function hideSpinner() {
 
 // When the registration button is pressed...
 regBtn.addEventListener("click", async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     // Save the href to the form
-    urlInput.value = `${window.location.href}${window.location.search}`;
+    urlInput.value = `${window.location.href}`;
     // Get the registration information
     const regInput = document.getElementById("regInput").value;
     // If no registration was entered...
@@ -91,45 +89,14 @@ regBtn.addEventListener("click", async (e) => {
             // Get the make and model of the vehicle
             vehicleMake.value = data.make;
             vehicleModel.value = data.model;
-            // Prevent the user from modifying this information
-            vehicleMake.disabled = true;
-            vehicleModel.disabled = true;
-            // Iterate through the possible sizes only return unique options
-            const formattedSizes = formatSize(data.tyreFitments);
-            tyreSizes = removeDuplicates(formattedSizes);
-            removeOptions(tyreSizeSelect);
-            tyreSizeSelect.options[tyreSizeSelect.options.length] = new Option(
-                "Select Tyre Size",
-                "0"
-            );
-
-            // Update the tyre size select to show the possible sizes
-            for (let size of uniqueSizes) {
-                tyreSizeSelect.options[tyreSizeSelect.options.length] =
-                    new Option(size, size);
-            }
-            // Add a final option of 'unknown' at the end
-            tyreSizeSelect.options[tyreSizeSelect.options.length] = new Option(
-                "Not listed / I don't know",
-                "Unknown"
-            );
             hideSpinner();
+            vehicleMake.classList.add("disabled")
+            vehicleModel.classList.add("disabled")
+            // Show vehicle confirmation section
             vehicleSection.classList.remove("d-none");
         }
     }
 });
-
-// When the user selects an option...
-tyreSizeSelect.addEventListener("change", (e) => {
-    // Check it isn't the 'Select Tyre Size' option
-    if (tyreSizeSelect.value == "0") {
-        // If it is, apply the disabled class to the button
-        correctBtn.classList.add("disabled")
-    } else {
-        // If not, then allow them to move on.
-        correctBtn.classList.remove("disabled")
-    }
-})
 
 // When the user clicks the back button
 incorrectBtn.addEventListener("click", (e) => {
@@ -138,17 +105,13 @@ incorrectBtn.addEventListener("click", (e) => {
     regSection.classList.remove("d-none");
     // Hide the vehicle section
     vehicleSection.classList.add("d-none");
-    // Remove the disabled class from the select elements
-    vehicleMake.disabled = false;
-    vehicleModel.disabled = false;
 });
 
 // When the user clicks the next button
 correctBtn.addEventListener("click", (e) => {
     e.preventDefault()
-    // Remove the disabled class from the select elements
-    vehicleMake.disabled = false;
-    vehicleModel.disabled = false;
+    vehicleMake.removeAttribute("disabled");
+    vehicleModel.removeAttribute("disabled");
     // Hide the vehicle section
     vehicleSection.classList.add("d-none");
     // Show the postcode section

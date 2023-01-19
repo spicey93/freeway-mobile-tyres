@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro"
+import TestQuote from "../components/TestQuote.astro";
+import Features from "../components/Features.astro";
+import Reviews from "../components/Reviews.astro";
+
+const bgImg = ""
+const heading = "Testing"
+const tagline = "This is a testing page"
+---
+
+<Layout title="" description="" noindex={true}>
+
+<section class="bg-overlay d-flex align-items-center" id="hero">
+    <div class="container">
+        <div class="row g-3 py-5">
+            <div class="col-12 col-lg-6 d-flex justify-content-center flex-column align-items-center align-items-lg-start text-light">
+                <h2 class="display-5 fw-bold text-center text-lg-start">{heading}</h2>
+                <p class="lead text-center fs-3 text-lg-start">{tagline}</p>
+                <Reviews />
+                <Features />
+            </div>
+            <div class="col-12 offset-lg-2 col-lg-4 d-flex justify-content-center align-items-center flex-column">
+                <!-- Quote Widget -->
+                <TestQuote />
+                <p class="text-white mt-3 text-center">Need help between 6pm and 8am? <br /> <span class="fw-bold fs-5">Call Us On <a href="tel:08007311260" id="heroPhone">0800 7311 260</a></span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</Layout>
+
+<style define:vars={{bgImg}}>
+    #hero {
+        background-image: var(--bgImg);
+        background-size: cover;
+        background-position: center;
+        min-height: 70vh;
+    }
+
+    #heroPhone {
+        color: white;
+    }
+
+    #heroPhone:hover {
+        color: #ccc;
+    }
+
+    .bg-overlay {
+        box-shadow:inset 0 0 0 2000px rgba(33, 37, 41, 0.85);
+    }
+</style>
