@@ -29,7 +29,7 @@ function hideSpinner() {
 regBtn.addEventListener("click", async (e) => {
     e.preventDefault()
     // Save the href to the form
-    urlInput.value = `${window.location.href}${window.location.search}`;
+    urlInput.value = `${window.location.href}`;
     // Get the registration information
     const regInput = document.getElementById("regInput").value;
     // If no registration was entered...
