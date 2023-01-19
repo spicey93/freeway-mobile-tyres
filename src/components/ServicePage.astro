@@ -11,15 +11,14 @@ export interface Props {
     bgImg: string,
     heading: string,
     tagline: string,
-    quoteForm: string,
     mainHeading: string,
 }
 
-const { title, description, bgImg, heading, quoteForm = "normal", tagline, mainHeading } = Astro.props;
+const { title, description, bgImg, heading, tagline, mainHeading } = Astro.props;
 ---
 
 <Layout title={`${title} | Freeway Mobile Tyres`} description={description}>
-    <Hero bgImg={bgImg} heading={heading} tagline={tagline} quoteForm={quoteForm}/>
+    <Hero bgImg={bgImg} heading={heading} tagline={tagline}/>
     <main class="py-5">
         <div class="container">
             <div class="row">
