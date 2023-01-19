@@ -99,18 +99,6 @@ regBtn.addEventListener("click", async (e) => {
             // Iterate through the possible sizes only return unique options
             const formattedSizes = formatSize(data.tyreFitments);
             tyreSizes = removeDuplicates(formattedSizes);
-            removeOptions(tyreSizeSelect);
-
-            // Update the tyre size select to show the possible sizes
-            for (let size of tyreSizes) {
-                tyreSizeSelect.options[tyreSizeSelect.options.length] =
-                    new Option(size, size);
-            }
-            // Add a final option of 'unknown' at the end
-            tyreSizeSelect.options[tyreSizeSelect.options.length] = new Option(
-                "Not listed / I don't know",
-                "Unknown"
-            );
             // Show vehicle confirmation section
             vehicleSection.classList.remove("d-none");
         }
@@ -131,6 +119,17 @@ correctVehicleBtn.addEventListener("click", (e) => {
     e.preventDefault()
     vehicleMake.removeAttribute("disabled");
     vehicleModel.removeAttribute("disabled");
+    removeOptions(tyreSizeSelect);
+    // Update the tyre size select to show the possible sizes
+    for (let size of tyreSizes) {
+        tyreSizeSelect.options[tyreSizeSelect.options.length] =
+            new Option(size, size);
+    }
+    // Add a final option of 'unknown' at the end
+    tyreSizeSelect.options[tyreSizeSelect.options.length] = new Option(
+        "Not listed / I don't know",
+        "Unknown"
+    );
     // Hide the vehicle section
     vehicleSection.classList.add("d-none");
     // Show the tyre size section
