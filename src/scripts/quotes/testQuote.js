@@ -8,12 +8,18 @@ const postcodeBtn = document.getElementById("postcodeBtn");
 const vehicleSection = document.getElementById("vehicleSection");
 const vehicleMake = document.getElementById("vehicleMake");
 const vehicleModel = document.getElementById("vehicleModel");
-const correctBtn = document.getElementById("correctBtn");
-const incorrectBtn = document.getElementById("incorrectBtn");
-const backToRegBtn = document.getElementById("backToRegBtn");
+const correctVehicleBtn = document.getElementById("correctVehicleBtn");
+const incorrectVehicleBtn = document.getElementById("incorrectVehicleBtn");
+const tyreSizeSection = document.getElementById("tyreSizeSection");
+const tyreSizeSelect = document.getElementById("tyreSizeSelect");
+const correctSizeBtn = document.getElementById("correctSizeBtn")
+const incorrectSizeBtn = document.getElementById("incorrectSizeBtn")
+// const backToRegBtn = document.getElementById("backToRegBtn");
+const backToSizeBtn = document.getElementById("backToSizeBtn");
 const contactSection = document.getElementById("contactSection");
 const backToPostcodeBtn = document.getElementById("backToPostcodeBtn");
 const submitBtn = document.getElementById("submitBtn");
+let tyreSizes = [];
 
 // Remove all the options from a select element
 function removeOptions(selectElement) {
@@ -90,8 +96,21 @@ regBtn.addEventListener("click", async (e) => {
             vehicleMake.value = data.make;
             vehicleModel.value = data.model;
             hideSpinner();
-            vehicleMake.classList.add("disabled")
-            vehicleModel.classList.add("disabled")
+            // Iterate through the possible sizes only return unique options
+            const formattedSizes = formatSize(data.tyreFitments);
+            tyreSizes = removeDuplicates(formattedSizes);
+            removeOptions(tyreSizeSelect);
+
+            // Update the tyre size select to show the possible sizes
+            for (let size of tyreSizes) {
+                tyreSizeSelect.options[tyreSizeSelect.options.length] =
+                    new Option(size, size);
+            }
+            // Add a final option of 'unknown' at the end
+            tyreSizeSelect.options[tyreSizeSelect.options.length] = new Option(
+                "Not listed / I don't know",
+                "Unknown"
+            );
             // Show vehicle confirmation section
             vehicleSection.classList.remove("d-none");
         }
@@ -99,7 +118,7 @@ regBtn.addEventListener("click", async (e) => {
 });
 
 // When the user clicks the back button
-incorrectBtn.addEventListener("click", (e) => {
+incorrectVehicleBtn.addEventListener("click", (e) => {
     e.preventDefault()
     // Show the registration section
     regSection.classList.remove("d-none");
@@ -108,21 +127,41 @@ incorrectBtn.addEventListener("click", (e) => {
 });
 
 // When the user clicks the next button
-correctBtn.addEventListener("click", (e) => {
+correctVehicleBtn.addEventListener("click", (e) => {
     e.preventDefault()
     vehicleMake.removeAttribute("disabled");
     vehicleModel.removeAttribute("disabled");
     // Hide the vehicle section
     vehicleSection.classList.add("d-none");
-    // Show the postcode section
-    postcodeSection.classList.remove("d-none");
+    // Show the tyre size section
+    tyreSizeSection.classList.remove("d-none");
 });
 
+// When the user clicks the back button
+incorrectSizeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    vehicleMake.setAttribute("disabled");
+    vehicleModel.setAttribute("disabled");
+    // Show the vehicle section
+    vehicleSection.classList.remove("d-none");
+    // Hide the tyre size section
+    tyreSizeSection.classList.add("d-none");
+})
+
+// When the user clicks the next button
+correctSizeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Hide the tyre size section
+    tyreSizeSection.classList.add("d-none");
+    // Show the postcode section
+    postcodeSection.classList.remove("d-none");
+})
+
 // If the user wants to go back to the registration section
-backToRegBtn.addEventListener("click", (e) => {
+backToSizeBtn.addEventListener("click", (e) => {
     e.preventDefault()
     // Show the registration section
-    regSection.classList.remove("d-none");
+    tyreSizeSection.classList.remove("d-none");
     // Hide the postcode section
     postcodeSection.classList.add("d-none");
 });
