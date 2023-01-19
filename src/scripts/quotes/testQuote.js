@@ -80,12 +80,14 @@ regBtn.addEventListener("click", async (e) => {
         showSpinner();
         // Check the registration exists
         const res = await fetch(
-            `https://dvlasearch.appspot.com/TyreSearch?apikey=DvlaSearchDemoAccount&licencePlate=${regInput}`
+            // `https://dvlasearch.appspot.com/TyreSearch?apikey=DvlaSearchDemoAccount&licencePlate=${regInput}`
+            `https://uk1.ukvehicledata.co.uk/api/datapackage/TyreData?v=2&api_nullitems=1&auth_apikey=61300019-5ea8-423b-ae25-9d5b5baf3d75&key_VRM=${regInput}`
         );
         // Parse the data
         const data = await res.json();
         // If there is an error in the data or it doesn't contain a vehicle make...
-        if (data.error || !data.make) {
+        // if (data.error || !data.make) {
+        if (data.Response.StatusCode === "KeyInvalid") {
             // Alert the user that there is an issue with the registration
             alert("Registration does not exist.");
             hideSpinner();
@@ -93,12 +95,20 @@ regBtn.addEventListener("click", async (e) => {
             regSection.classList.remove("d-none");
         } else {
             // Get the make and model of the vehicle
-            vehicleMake.value = data.make;
-            vehicleModel.value = data.model;
+            // vehicleMake.value = data.make;
+            // vehicleModel.value = data.model;
+            vehicleMake.value = data.Response.DataItems.VehicleDetails.Make
+            vehicleModel.value = data.Response.DataItems.VehicleDetails.Model
+            const records = data.Response.DataItems.TyreDetails.RecordList
+            const sizes = []
+            for (let record of records) {
+                sizes.push(record.Front.Tyre.Size) 
+            }
+            tyreSizes = sizes
             hideSpinner();
             // Iterate through the possible sizes only return unique options
-            const formattedSizes = formatSize(data.tyreFitments);
-            tyreSizes = removeDuplicates(formattedSizes);
+            // const formattedSizes = formatSize(data.tyreFitments);
+            // tyreSizes = removeDuplicates(formattedSizes);
             // Show vehicle confirmation section
             vehicleSection.classList.remove("d-none");
         }
