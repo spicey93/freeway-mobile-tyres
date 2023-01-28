@@ -17,7 +17,7 @@ export interface Props {
 const { title, description, bgImg, heading, tagline, mainHeading } = Astro.props;
 ---
 
-<Layout title={`${title} | Freeway Mobile Tyres`} description={description}>
+<Layout title={`${title} | Freeway Mobile Tyres`} description={description} noindex={false}>
     <Hero bgImg={bgImg} heading={heading} tagline={tagline}/>
     <main class="py-5">
         <div class="container">
