@@ -14,7 +14,6 @@ const tyreSizeSection = document.getElementById("tyreSizeSection");
 const tyreSizeSelect = document.getElementById("tyreSizeSelect");
 const correctSizeBtn = document.getElementById("correctSizeBtn");
 const incorrectSizeBtn = document.getElementById("incorrectSizeBtn");
-// const backToRegBtn = document.getElementById("backToRegBtn");
 const backToSizeBtn = document.getElementById("backToSizeBtn");
 const contactSection = document.getElementById("contactSection");
 const backToPostcodeBtn = document.getElementById("backToPostcodeBtn");
@@ -81,7 +80,6 @@ regBtn.addEventListener("click", async (e) => {
         // Check the registration exists
         const res = await fetch(
             `https://dvlasearch.appspot.com/TyreSearch?apikey=DvlaSearchDemoAccount&licencePlate=${regInput}`
-            // `https://uk1.ukvehicledata.co.uk/api/datapackage/TyreData?v=2&api_nullitems=1&auth_apikey=61300019-5ea8-423b-ae25-9d5b5baf3d75&key_VRM=${regInput}`
         );
         // Parse the data
         const data = await res.json();
