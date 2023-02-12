@@ -1,3 +1,7 @@
+// Save URL href to the form
+const urlInput = document.getElementById("urlInput");
+urlInput.value = window.location.href;
+
 // Find all elements with the class 'next-btn' and return them as an array
 const nextBtns = document.querySelectorAll(".next-btn");
 
