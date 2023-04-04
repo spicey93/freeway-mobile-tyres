@@ -7,69 +7,86 @@ import CTA from '../components/CTA.astro';
 const title = "Mobile Tyres, Puncture Repairs, TPMS, Batteries"
 const description = "Freeway Mobile Tyres are one of Dorset's leading mobile tyre services. We'll come to you at home, work or roadside and fit your tyres today."
 const bgImg = "url(/img/services/freeway-mobile-tyres.webp)"
-const heading = "Why Spend Hours At A Garage?"
-const tagline = "We Can Fit Your Tyres At Home, Work or Roadside"
+const heading = "No More Waiting in Garages"
+const tagline = "Get Your Tyres Fitted at Home, Work or Roadside"
 ---
 
 <Layout title={`${title} | Freeway Mobile Tyres`} description={description} noindex={false}>
     <Hero heading={heading} tagline={tagline} bgImg={bgImg}/>
-    <main class="py-5">
-        <div class="container">
-            <h1 class="text-center mb-3 mb-lg-5">Your Local Mobile Tyre Service In Dorset</h1>
-            <div class="row text-center text-lg-start">
-                <div class="col-12 col-lg-6">
-                    <p><em>Are you stranded at the side of the road with a flat tyre? Do you need to change your old car tyres but don’t want to spend hours at a garage?</em> Well, you’ve come to the right place!</p>
-                    <p>Freeway Mobile Tyres is your local mobile tyre fitting service in Dorset. We come to your location at a time that suits you and replace your tyres today.</p>
-                    <p>We can fit tyres to most types of vehicles, including cars, vans, caravans, motorhomes, and trailers.</p>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <p>In addition, we are one of the few tyre services in Dorset that provide <strong>same day fitting</strong> and <strong>seven day service</strong>.</p>
-                    <p>What’s more, with an average arrival time of less than 60 minutes, we provide one of the fastest mobile tyre replacement services in the area.</p>
-                    <p>So what are you waiting for? Contact us today and experience the easy way to change your tyres!</p>
-                </div>
+    <main class="container my-5">
+        <h1 class="text-center mb-3 mb-lg-5">Freeway Mobile Tyres - Your Local Mobile Tyre Fitting Experts In Dorset</h1>
+        <div class="row text-center text-lg-start">
+            <div class="col-12 col-lg-6">
+                <p>Are you stranded at the side of the road with a <strong>flat tyre</strong>? Or perhaps you need to change your old car tyres, but don't have time to spend hours at a garage? You're in luck – Freeway Mobile Tyres is here to help!</p>
+                <p>With over 30 years of experience in the tyre industry, we are your local <strong>mobile tyre fitting</strong> experts in Dorset. Our team of skilled technicians can come to your location at a time that suits you and replace your tyres on the same day. We can fit tyres to most types of vehicles, including cars, vans, caravans, motorhomes, and trailers.</p>
+                <p>In addition to our convenience, we are also proud to offer one of the fastest mobile tyre replacement services in the area. With an <em>average arrival time of less than 60 minutes</em>, you can trust us to get you back on the road as quickly as possible. </p>
+            </div>
+            <div class="col-12 col-lg-6">
+
+                <p>In addition to our convenience and speed, we are also proud to offer one of the most flexible mobile tyre fitting services in the area. We operate <strong>seven days a week</strong>, which means that you can rely on us for urgent assistance on Sundays when local tyre shops are closed. </p>
+                <p>At Freeway Mobile Tyres, we take pride in our workmanship and always go the extra mile to ensure that our customers are satisfied. We stock a large variety of tyre sizes and use quality equipment. We also provide a range of additional services, including <a href="/mobile-tyres/puncture-repair">puncture repairs</a>, <a href="/services/locking-wheel-nut-removal">locking wheel nut removal</a>, <a href="/services/mobile-car-battery-replacement">mobile battery replacement</a>, and <a href="/services/alloygator-wheel-protection">alloy wheel protectors</a>.</p>
+<p>So why wait? Contact us today and experience the easy way to change your tyres with the local experts you can trust.</p>
             </div>
         </div>
-        <div class="container">
+    </main>
+
+    <section id="aboutSection" class="container my-5">
+        <div class="row g-0">
+            <div class="col-12 col-lg-6 bg-light p-4 order-lg-1 order-2">
+                <h2>About Us</h2>
+                <p>At Freeway Mobile Tyres, our mission is to make your life easier and save you time by providing a convenient and flexible mobile tyre-fitting service at your doorstep. Our vans are on the road 7 days a week to help you in the event of a tyre emergency.</p>
+                <p>Our history dates back over 30 years, with Paul Spicer establishing Mobile Tyres in 1990 and David Buckby founding Freeway Tyres in 1984. Now, with almost 400 five-star reviews on Google, we're one of the most reputable mobile tyre services in Dorset. At Freeway Mobile Tyres, we're committed to providing the best quality tyre service to our customers.</p>
+                <a href="/about" class="btn btn-outline-danger">Find out more</a>
+            </div>
+            <div class="col-12 col-lg-6 order-1 order-lg-2">
+                <img src="/img/services/about-us.jpeg" alt="An overhead view of the Freeway Mobile Tyres depot with the vans parked outside." class="w-100 h-100">
+            </div>
+        </div>
+    </section>
+    
+    <section id="servicesSection" class="container my-5">
             <div class="col-10 offset-1">
     
                 <div class="text-center pt-5">
                     <h2 class="mb-3">Our Services</h2>
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-4">
-                            <Card cardTitle="Mobile Tyre Fitting" cardText="Tyres Fitted at Home, Work Or Roadside" cardLink="/mobile-tyres/mobile-tyre-fitting">
+                            <Card cardTitle="Mobile Tyre Fitting" cardText="Tyres fitted at your home, work, or roadside for your convenience." cardLink="/mobile-tyres/mobile-tyre-fitting">
                                 <i class="bi bi-car-front fs-1 mb-3"></i>
                             </Card>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <Card cardTitle="Puncture Repair" cardText="We'll Come To You And Fix Your Flat Tyre" cardLink="/mobile-tyres/puncture-repair">
+                            <Card cardTitle="Puncture Repair" cardText="We'll come to you and fix your flat tyre, getting you back on the road in no time." cardLink="/mobile-tyres/puncture-repair">
                                 <i class="bi bi-vinyl fs-1 mb-3"></i>
                             </Card>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <Card cardTitle="Caravan Tyre Fitting" cardText="Change Your Caravan Tyres The Easy Way" cardLink="/mobile-tyres/mobile-caravan-tyre-fitting">
+                            <Card cardTitle="Caravan Tyre Fitting" cardText="Change your caravan tyres easily and conveniently with our mobile fitting service." cardLink="/mobile-tyres/mobile-caravan-tyre-fitting">
                                 <i class="bi bi-truck fs-1 mb-3"></i>
                             </Card>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <Card cardTitle="Locking Wheel Nut Removal" cardText="All Car Makes & Models Covered" cardLink="/services/locking-wheel-nut-removal">
+                            <Card cardTitle="Locking Wheel Nut Removal" cardText="Our experts can remove locking wheel nuts from all car makes and models." cardLink="/services/locking-wheel-nut-removal">
                                 <i class="bi bi-wrench-adjustable fs-1 mb-3"></i>
                             </Card>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <Card cardTitle="Tyre Pressure Sensors" cardText="TPMS Diagnostics & Repair" cardLink="/services/tyre-pressure-monitoring-system">
+                            <Card cardTitle="Tyre Pressure Sensors" cardText="Our team offers TPMS diagnostics and repair to ensure your tyre pressure sensors are working properly." cardLink="/services/tyre-pressure-monitoring-system">
                                 <i class="bi bi-wifi fs-1 mb-3"></i>
                             </Card>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <Card cardTitle="AlloyGator Wheel Protectors" cardText="Protect & Style Your Rims" cardLink="/services/alloygator-wheel-protection">
+                            <Card cardTitle="AlloyGator Wheel Protectors" cardText="Protect and style your rims with AlloyGator wheel protectors." cardLink="/services/alloygator-wheel-protection">
                                 <i class="bi bi-shield fs-1 mb-3"></i>
                             </Card>
                         </div>
                     </div>
+                    
                 </div>
             </div>
-        </div>
-    </main>
+
+    </section>
+
     <Testimonials />
     <CTA />
 </Layout>
