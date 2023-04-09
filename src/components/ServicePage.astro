@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import Testimonials from "./Testimonials.astro";
 import CTA from "../components/CTA.astro";
 import AsideCards from "../components/AsideCards.astro";
+import AsideAreas from "./AsideAreas.astro";
 
 export interface Props {
     title: string,
@@ -28,6 +29,7 @@ const { title, description, bgImg, heading, tagline, mainHeading } = Astro.props
                 </div>
                 <div class="col-12 col-lg-4">
                     <AsideCards />
+                    <AsideAreas />
                 </div>
             </div>
         </div>
