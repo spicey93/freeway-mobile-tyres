@@ -1,0 +1,45 @@
+---
+export async function getStaticPaths() {
+    return [
+        // Ad #1
+        { params: {
+            ad: "mtf-1"
+        }, 
+        props: {
+            title: "Mobile Tyre Fitting In Dorset", 
+            heading: "Mobile Tyre Fitting In Dorset",
+            tagline: "Need new tyres? We can come to you at home or roadside today!",
+            subheading: "Need Tyres? We'll Come To You",
+            bgImg: "/img/services/mobile-tyre-fitting.webp",
+            bgImgAlt: "Mobile tyre fitting service",
+            mainBody: "If you need tyres fitted on your car today, you've come to the right place. We offer a convenient mobile tyre service across many areas of Dorset, including Poole & Bournemouth",
+            reviewOneBody: "Absolutely brilliant service! Requested a quote and was called back within minutes, given a price, and told my tyre could be replaced the same day. The technician came within a few hours, replaced the tyre super quickly and checked the other tyres to make sure they were ok too. I will be returning should the need arise again! Thank you!",
+            reviewOneName: "Suzy Wignall",
+            reviewTwoBody: "Excellent service.  I rang at midday and the tyre was ordered and fitted at 4pm, as stated.  Reece was friendly and efficient and fitted our tyre quickly.  I was expecting to pay a premium for the  convenience of having it done on our drive, but it was cheaper than the ones we got at Halfords.  We will definitely use Freeway mobile tyres again and would recommend them.",
+            reviewTwoName: "Jackie Turner"
+        }},
+        // Ad #2
+        { params: {
+            ad: "mtf-2"
+        }, 
+        props: {
+            title: "Mobile Tyre Fitting In Dorset", 
+            heading: "Mobile Tyre Fitting In Dorset",
+            tagline: "Need new tyres? We can come to you at home or roadside today!",
+            subheading: "Need tyres? We'll come to you",
+            bgImg: "url(/img/services/mobile-tyre-fitting.webp)",
+            bgImgAlt: "Mobile tyre fitting service",
+            mainBody: "If you need tyres fitted on your car today, you've come to the right place. We offer a convenient mobile tyre service across many areas of Dorset, including Poole & Bournemouth",
+            reviewOneBody: "",
+            reviewOneName: "",
+            reviewTwoBody: "",
+            reviewTwoName: ""
+        }}
+    ]
+}
+
+import AdLayout from "../../layouts/AdLayout.astro";
+const { title, heading, tagline, subheading, bgImg, bgImgAlt, mainBody, reviewOneBody, reviewOneName, reviewTwoBody, reviewTwoName } = Astro.props;
+---
+
+<AdLayout title={title} tagline={tagline} heading={heading} subheading={subheading} bgImg={bgImg} bgImgAlt={bgImgAlt} mainBody={mainBody} reviewOneBody={reviewOneBody} reviewOneName={reviewOneName} reviewTwoBody={reviewTwoBody} reviewTwoName={reviewTwoName}/>

@@ -1,0 +1,163 @@
+---
+import '../styles/bootstrap/bootstrap.min.css'
+import "../styles/bootstrap-icons/bootstrap-icons.css"
+
+export interface Props {
+    title: string,
+    heading: string,
+    tagline: string,
+    bgImg: string,
+    bgImgAlt: string,
+    subheading: string,
+    mainBody: string,
+    reviewOneBody: string,
+    reviewOneName: string,
+    reviewTwoBody: string,
+    reviewTwoName: string,
+
+}
+
+const { title, heading, tagline, bgImg, bgImgAlt, subheading, mainBody, featureOne, featureTwo, featureThree, callToAction, reviewOneBody, reviewOneName, reviewTwoBody, reviewTwoName} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script>
+			import "../scripts/google/googleTagManager.js"
+		</script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="" />
+		<title>{title}</title>
+        <meta name="robots" content="noindex">
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJ757DK"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+        <section class="bg-light">
+            <header class="container pt-3 d-flex align-items-center justify-content-between">
+                <img src="/img/logos/color-logo-no-background.png" alt="Freeway Logo" width="250">
+                <p class="fs-4 fw-bold d-none d-lg-inline">Call Now: <a href="tel:08007311260" class="link-danger">0800 7311260</a></p>
+            </header>
+            <div class="container">
+                <div class="row" id="adHero">
+                    <div class="col-lg-6 my-5 text-center text-lg-start d-flex flex-column justify-content-center order-lg-1 order-2">
+                        <h1 class="display-3 fw-bold">{heading}</h1>
+                        <p class="fs-3 mb-4">{tagline}</p>
+                        <div>
+                            <a href="tel:08007311260" class="btn btn-danger btn-lg fw-bold d-lg-none">Call Now</a>
+                            <a href="#adCTA" class="btn btn-danger btn-lg fw-bold d-none d-lg-inline-block">Get Quote</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-center order-1 order-lg-2 justify-content-center">
+                        <img src={bgImg} alt={bgImgAlt} class="w-75 my-5 rounded-3 shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main class="d-flex flex-column align-items-center justify-content-center my-5" id="adCTA">
+            <h2 class="display-5 fw-bold text-center mb-5">{subheading}</h2>
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-12 col-lg-7">
+                        <p class="fs-4">
+                            {mainBody}
+                        </p>
+                        <p class="fw-bold fs-4">Why Use Us?</p>
+                        <ul class="fs-4">
+                            <li>Same day service available</li>
+                            <li>Open 7 days a week</li>
+                            <li>Dorset areas covered</li>
+                        </ul>
+                        <p class="fw-bold fs-4">Contact Us</p>
+                        <p class="fs-4">
+                            If you'd like a price for our services, give us a call today on <a href="tel:08007311260" class="link-danger fw-bold">0800 7311 260</a> or submit a quote.
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-4 offset-lg-1">
+                        <form action="https://safe-island-80193.herokuapp.com/gads-route" class="py-4 px-5 border bg-light rounded-3 border-dark" method="post">
+                            <h3 class="text-center mb-4 fs-3 lead fw-bold">Get a Quote</h3>
+                            <div class="mb-3">
+                                <input type="text" class="form-control form-control-lg" placeholder="Name" name="Name">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control form-control-lg" placeholder="Phone Number" name="Phone">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control form-control-lg" placeholder="Email" name="Email">
+                            </div>
+                            <div class="mb-3">
+                                <textarea name="" id="" cols="30" rows="3" class="form-control form-control-lg" placeholder="Message" name="Message"></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-danger btn-lg fw-bold">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <article class="py-5 bg-light">
+            <div class="container py-5">
+                <h2 class="display-5 fw-bold text-center mb-5">What Our Customers Are Saying</h2>
+                <div class="row g-5">
+                    <div class="col-12 col-lg-6">
+                        <i class="bi bi-quote fs-1"></i>
+                        <p class="fs-4">
+                            {reviewOneBody}
+                        </p>
+                        <i class="bi bi-star-fill text-warning fs-4"></i><i class="bi bi-star-fill text-warning fs-4"></i><i class="bi bi-star-fill text-warning fs-4"></i><i class="bi bi-star-fill text-warning fs-4"></i><i class="bi bi-star-fill text-warning fs-4"></i>
+                        <p class="fs-4 fw-bold mb-0">
+                            {reviewOneName}
+                        </p>
+                        <p class="fs-5">Google Review</p>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <i class="bi bi-quote fs-1"></i>
+                        <p class="fs-4">
+                            {reviewTwoBody}
+                        </p>
+                        <i class="bi bi-star-fill text-warning fs-4"></i><i class="bi bi-star-fill text-warning fs-4"></i><i class="bi bi-star-fill text-warning fs-4"></i><i class="bi bi-star-fill text-warning fs-4"></i><i class="bi bi-star-fill text-warning fs-4"></i>
+                        <p class="fs-4 fw-bold mb-0">
+                            {reviewTwoName}
+                        </p>
+                        <p class="fs-5">Google Review</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- <section class="bg-danger py-5 text-center text-white">
+            <div class="container py-5">
+                <h2 class="mb-3 fs-1">Call Now For a Quote</h2>
+                <a href="tel:08007311260" class="btn btn-light btn-lg fw-bold fs-2"><i class="bi bi-telephone-fill"></i> 0800 7311 260</a>
+            </div>
+        </section> -->
+
+		<script>
+			import "../scripts/bootstrap/bootstrap.bundle"
+		</script>
+	</body>
+</html>
+
+<style>
+    header {
+        min-height: 15vh;
+    }
+
+    main {
+        min-height: 100vh;
+    }
+
+    #adHero {
+        min-height: 85vh;
+    }
+</style>
