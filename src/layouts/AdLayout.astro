@@ -81,14 +81,30 @@ const { title, heading, tagline, bgImg, bgImgAlt, subheading, mainBody, featureO
                             If you'd like a price for our services, give us a call today on <a href="tel:08007311260" class="link-danger fw-bold">0800 7311 260</a> or submit a quote.
                         </p>
                     </div>
-                    <div class="col-12 col-lg-4 offset-lg-1">
-                        <form action="https://safe-island-80193.herokuapp.com/gads-route" class="py-4 px-5 border bg-light rounded-3 border-dark" method="post">
+                    <div class="col-12 col-lg-5">
+                        <form action="https://safe-island-80193.herokuapp.com" class="py-4 px-5 border bg-light rounded-3 border-dark" method="post">
                             <h3 class="text-center mb-4 fs-3 lead fw-bold">Get a Quote</h3>
-                            <div class="mb-3">
-                                <input type="text" class="form-control form-control-lg" placeholder="Name" name="Name">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Name" name="Name">
+                                    </div>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Phone" name="Phone">
+                                    </div>
+
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control form-control-lg" placeholder="Phone Number" name="Phone">
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <input type="text" class="form-control form-control-lg" name="Postcode" placeholder="Postcode">
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control form-control-lg" name="Registration" placeholder="Registration">
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <input type="text" class="form-control form-control-lg" placeholder="Email" name="Email">
