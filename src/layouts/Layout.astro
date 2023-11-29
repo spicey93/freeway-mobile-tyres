@@ -1,5 +1,5 @@
 ---
-import '../styles/bootstrap/bootstrap.min.css'
+import "../styles/main.min.css"
 import "../styles/bootstrap-icons/bootstrap-icons.css"
 import Topbar from '../components/Topbar.astro';
 import Navbar from '../components/Navbar.astro';
@@ -36,7 +36,6 @@ const { title, description, noindex = false} = Astro.props;
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
 		<header>
-			<Topbar />
 			<Navbar />
 		</header>
 		<slot />
