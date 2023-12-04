@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Hero from "../components/Hero.astro";
-import Testimonials from "./Testimonials.astro";
+// import Testimonials from "./Testimonials.astro";
+import ReviewWidget from "./ReviewWidget.astro";
 import CTA from "../components/CTA.astro";
 import AsideCards from "../components/AsideCards.astro";
 import AsideAreas from "./AsideAreas.astro";
@@ -34,6 +35,7 @@ const { title, description, bgImg, heading, tagline, mainHeading } = Astro.props
             </div>
         </div>
     </main>
-    <Testimonials />
     <CTA />
+    <ReviewWidget />
+    <!-- <Testimonials /> -->
 </Layout>

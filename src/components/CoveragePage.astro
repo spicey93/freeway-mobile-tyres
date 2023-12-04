@@ -1,51 +1,119 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Testimonials from "./Testimonials.astro";
+// import Testimonials from "./Testimonials.astro";
+import ReviewWidget from "./ReviewWidget.astro";
 import CTA from "../components/CTA.astro";
 import AsideCards from "../components/AsideCards.astro";
 
 export interface Props {
-    city: string,
-    about: string,
-    areas: string,
+    city: string;
+    about: string;
+    areas: string;
 }
 
 const { city, about, areas } = Astro.props;
 ---
 
-<Layout title={`Mobile Tyre Fitting In ${city}`} noindex={false} description={`"Stuck with a flat tyre in ${city}? Our mobile tyre fitting service can come to you and replace your tyres quickly and conveniently. Call us today to schedule an appointment!"`}>
-    <Hero bgImg="url(/img/services/mobile-tyre-fitting.webp)" heading={`Mobile Tyre Fitting In ${city}`} tagline="We Come To You At Home, Work Or Roadside"/>
+<Layout
+    title={`Mobile Tyre Fitting In ${city}`}
+    noindex={false}
+    description={`"Stuck with a flat tyre in ${city}? Our mobile tyre fitting service can come to you and replace your tyres quickly and conveniently. Call us today to schedule an appointment!"`}
+>
+    <Hero
+        bgImg="url(/img/services/mobile-tyre-fitting.webp)"
+        heading={`Mobile Tyre Fitting In ${city}`}
+        tagline="We Come To You At Home, Work Or Roadside"
+    />
     <main class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-8">
-                    <h1 class="text-center text-lg-start">Mobile Tyre Fitting In {city}</h1>
-                    <p>At Freeway Mobile Tyres, we're proud to offer our convenient <strong>mobile tyre fitting service</strong> to residents of <strong>{city}</strong> and the surrounding areas. Our highly experienced tyre fitters can change tyres on a wide range of vehicles including <strong>cars, vans, caravans, and trailers</strong>.</p>
-                    <p>Whether you're at home or roadside, our mobile tyre fitters in {city} are available <strong>7 days a week</strong> to provide fast and reliable service that fits your schedule.</p>
-                    <p>If you're in {city} and need a quote for our mobile tyre fitting service, simply give us a call on our free phone number 0800 7311260. Don't let a flat tyre ruin your day - <strong>call us today</strong> for efficient and convenient mobile tyre fitting in {city}.</p>
+                    <h1 class="text-center text-lg-start">
+                        Mobile Tyre Fitting In {city}
+                    </h1>
+                    <p>
+                        At Freeway Mobile Tyres, we're proud to offer our
+                        convenient <strong>mobile tyre fitting service</strong> to
+                        residents of <strong>{city}</strong> and the surrounding
+                        areas. Our highly experienced tyre fitters can change tyres
+                        on a wide range of vehicles including <strong
+                            >cars, vans, caravans, and trailers</strong
+                        >.
+                    </p>
+                    <p>
+                        Whether you're at home or roadside, our mobile tyre
+                        fitters in {city} are available <strong
+                            >7 days a week</strong
+                        > to provide fast and reliable service that fits your schedule.
+                    </p>
+                    <p>
+                        If you're in {city} and need a quote for our mobile tyre
+                        fitting service, simply give us a call on our free phone
+                        number 0800 7311260. Don't let a flat tyre ruin your day
+                        - <strong>call us today</strong> for efficient and convenient
+                        mobile tyre fitting in {city}.
+                    </p>
                     <section id="about" class="p-3 bg-light my-3">
                         <h3>About {city}</h3>
                         <p>{about}</p>
                     </section>
                     <h3>Why Choose Freeway Mobile Tyres</h3>
-                    <p>At Freeway Mobile Tyres, we're dedicated to providing top-quality service to our customers in {city} and beyond. Our mobile tyre fitters are available 7 days a week, providing <strong>same-day fitting</strong> across Dorset, so you don't have to wait long to get back on the road. Our team can fit tyres on a wide range of vehicles including cars, vans, caravans, and trailers, ensuring that we have the expertise to get you moving again quickly. We pride ourselves on being one of the fastest mobile tyre services in Dorset, with an <em>average arrival time of just 60 minutes!</em></p>
+                    <p>
+                        At Freeway Mobile Tyres, we're dedicated to providing
+                        top-quality service to our customers in {city} and beyond.
+                        Our mobile tyre fitters are available 7 days a week, providing
+                        <strong>same-day fitting</strong> across Dorset, so you don't
+                        have to wait long to get back on the road. Our team can fit
+                        tyres on a wide range of vehicles including cars, vans, caravans,
+                        and trailers, ensuring that we have the expertise to get
+                        you moving again quickly. We pride ourselves on being one
+                        of the fastest mobile tyre services in Dorset, with an <em
+                            >average arrival time of just 60 minutes!</em
+                        >
+                    </p>
                     <h2>Other Services We Offer in {city}</h2>
-                    <p>In addition to our mobile tyre fitting service, we offer a range of other services in {city} to help you keep your vehicle in top condition. Our services include <a href="/mobile-tyres/puncture-repair">puncture repairs</a>, <a href="/services/locking-wheel-nut-removal">locking wheel nut removal</a>, <a href="/services/mobile-car-battery-replacement">batteries</a>, <a href="/services/tyre-pressure-monitoring-system">TPMS</a> and more. With our reliable and efficient service, you can rest assured that your vehicle is in good hands.</p>
+                    <p>
+                        In addition to our mobile tyre fitting service, we offer
+                        a range of other services in {city} to help you keep your
+                        vehicle in top condition. Our services include <a
+                            href="/mobile-tyres/puncture-repair"
+                            >puncture repairs</a
+                        >, <a href="/services/locking-wheel-nut-removal"
+                            >locking wheel nut removal</a
+                        >, <a href="/services/mobile-car-battery-replacement"
+                            >batteries</a
+                        >, <a href="/services/tyre-pressure-monitoring-system"
+                            >TPMS</a
+                        > and more. With our reliable and efficient service, you
+                        can rest assured that your vehicle is in good hands.
+                    </p>
                     <h2>Get A Quote For Tyres In {city}</h2>
-                    <p>If you're in {city} and need a quote for our mobile tyre fitting service or any of our other services, simply give us a call on our free phone number 0800 7311260. Our friendly team is always ready to answer your questions and provide you with the information you need.</p>
+                    <p>
+                        If you're in {city} and need a quote for our mobile tyre
+                        fitting service or any of our other services, simply give
+                        us a call on our free phone number 0800 7311260. Our friendly
+                        team is always ready to answer your questions and provide
+                        you with the information you need.
+                    </p>
                 </div>
                 <div class="col-12 col-lg-4">
                     <AsideCards />
                     <aside class="my-4 bg-light p-3 shadow-sm border rounded-3">
-                        <p class="lead text-center my-3 fw-bold fs-4">Areas Served In {city}</p>
-                        <p class="text-center">Our mobile tyre services are available across {areas}</p>
+                        <p class="lead text-center my-3 fw-bold fs-4">
+                            Areas Served In {city}
+                        </p>
+                        <p class="text-center">
+                            Our mobile tyre services are available across {
+                                areas
+                            }
+                        </p>
                     </aside>
                 </div>
             </div>
         </div>
     </main>
     <CTA />
-    <Testimonials />
-    <CTA />
+    <!-- <Testimonials /> -->
+    <ReviewWidget />
 </Layout>
