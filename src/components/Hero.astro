@@ -2,29 +2,63 @@
 import Quote from "./Quote.astro";
 import Features from "./Features.astro";
 import Reviews from "./Reviews.astro";
+import MessageModal from "./MessageModal.astro"
 
-const {bgImg, heading, tagline} = Astro.props;
+const { bgImg, heading, tagline } = Astro.props;
 ---
 
 <section class="bg-overlay d-flex align-items-center" id="hero">
     <div class="container">
         <div class="row g-3 py-5">
-            <div class="col-12 col-lg-6 d-flex justify-content-center flex-column align-items-center align-items-lg-start text-light">
-                <h2 class="display-5 fw-bold text-center text-lg-start">{heading}</h2>
+            <div
+                class="col-12 col-lg-6 d-flex justify-content-center flex-column align-items-center align-items-lg-start text-light"
+            >
+                <h2 class="display-5 fw-bold text-center text-lg-start">
+                    {heading}
+                </h2>
                 <p class="lead text-center fs-3 text-lg-start">{tagline}</p>
                 <Reviews />
                 <Features />
             </div>
-            <div class="col-12 offset-lg-2 col-lg-4 d-flex justify-content-center align-items-center flex-column">
-                <!-- Quote Widget -->
-                <Quote />
-                <p class="text-white mt-3 text-center">Need help between 6pm and 8am? <br /> <span class="fw-bold fs-5">Call Us On <a href="tel:08007311260" id="heroPhone">0800 7311 260</a></span></p>
+            <div
+                class="col-12 offset-lg-2 col-lg-4 d-flex justify-content-center align-items-center flex-column"
+            >
+                <div class="d-none d-md-block">
+                    <!-- Quote Widget -->
+                    <Quote />
+                    <p class="text-white mt-3 text-center">
+                        Need help between 6pm and 8am? <br />
+                        <span class="fw-bold fs-5"
+                            >Call Us On <a href="tel:08007311260" id="heroPhone"
+                                >0800 7311 260</a
+                            ></span
+                        >
+                    </p>
+                </div>
+                <div class="d-md-none">
+                    <div class="d-flex flex-column">
+                        <a
+                            href="tel:08007311260"
+                            class="btn btn-lg btn-warning mt-3"
+                            ><i class="bi bi-telephone-fill me-2"></i>Call Now</a
+                        >
+                        <button
+                            type="button"
+                            class="btn btn-lg btn-outline-light mt-3"
+                            data-bs-toggle="modal"
+                            data-bs-target="#messageModal"
+                        >
+                            <i class="bi bi-envelope-fill me-3"></i>Send Message
+                        </button>
+                        <MessageModal />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<style define:vars={{bgImg}}>
+<style define:vars={{ bgImg }}>
     #hero {
         background-image: var(--bgImg);
         background-size: cover;
@@ -41,6 +75,6 @@ const {bgImg, heading, tagline} = Astro.props;
     }
 
     .bg-overlay {
-        box-shadow:inset 0 0 0 2000px rgba(33, 37, 41, 0.85);
+        box-shadow: inset 0 0 0 2000px rgba(33, 37, 41, 0.85);
     }
 </style>
