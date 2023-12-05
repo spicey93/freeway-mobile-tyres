@@ -11,7 +11,7 @@
     aria-labelledby="messageModalLabel"
     aria-hidden="true"
 >
-    <form action="https://safe-island-80193.herokuapp.com" method="post">
+    <form action="https://safe-island-80193.herokuapp.com/test" method="post">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -25,6 +25,9 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div class="d-none">
+                        <input type="text" name="url" id="urlModalInput" />
+                    </div>
                     <div class="mb-3 row">
                         <div class="col-6">
                             <label
@@ -120,3 +123,8 @@
         </div>
     </form>
 </div>
+
+<script>
+    const urlModalInput = document.getElementById("urlModalInput");
+    urlModalInput.value = window.location.href;
+</script>
