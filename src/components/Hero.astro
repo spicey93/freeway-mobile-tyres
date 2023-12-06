@@ -2,7 +2,6 @@
 import Quote from "./Quote.astro";
 import Features from "./Features.astro";
 import Reviews from "./Reviews.astro";
-import MessageModal from "./MessageModal.astro"
 
 const { bgImg, heading, tagline } = Astro.props;
 ---
@@ -23,36 +22,16 @@ const { bgImg, heading, tagline } = Astro.props;
             <div
                 class="col-12 offset-lg-2 col-lg-4 d-flex justify-content-center align-items-center flex-column"
             >
-                <div class="d-none d-md-block">
-                    <!-- Quote Widget -->
-                    <Quote />
-                    <p class="text-white mt-3 text-center">
-                        Need help between 6pm and 8am? <br />
-                        <span class="fw-bold fs-5"
-                            >Call Us On <a href="tel:08007311260" id="heroPhone"
-                                >0800 7311 260</a
-                            ></span
-                        >
-                    </p>
-                </div>
-                <div class="d-md-none">
-                    <div class="d-flex flex-column">
-                        <a
-                            href="tel:08007311260"
-                            class="btn btn-lg btn-warning mt-3"
-                            ><i class="bi bi-telephone-fill me-2"></i>Call Now</a
-                        >
-                        <button
-                            type="button"
-                            class="btn btn-lg btn-outline-light mt-3"
-                            data-bs-toggle="modal"
-                            data-bs-target="#messageModal"
-                        >
-                            <i class="bi bi-envelope-fill me-3"></i>Send Message
-                        </button>
-                        <MessageModal />
-                    </div>
-                </div>
+                <!-- Quote Widget -->
+                <Quote />
+                <p class="text-white mt-3 text-center">
+                    Need help between 6pm and 8am? <br />
+                    <span class="fw-bold fs-5"
+                        >Call Us On <a href="tel:08007311260" id="heroPhone"
+                            >0800 7311 260</a
+                        ></span
+                    >
+                </p>
             </div>
         </div>
     </div>

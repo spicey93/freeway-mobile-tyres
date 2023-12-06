@@ -1,49 +1,51 @@
 ---
-import "../styles/main.min.css"
-import "../styles/bootstrap-icons/bootstrap-icons.css"
-import Topbar from '../components/Topbar.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import "../styles/main.min.css";
+import "../styles/bootstrap-icons/bootstrap-icons.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 export interface Props {
-	title: string;
-	description: string,
-	noindex: boolean,
+    title: string;
+    description: string;
+    noindex: boolean;
 }
 
-const { title, description, noindex = false} = Astro.props;
-
-
+const { title, description, noindex = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<script>
-			import "../scripts/google/googleTagManager.js"
-		</script>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		<title>{title}</title>
-		{ noindex && <meta name="robots" content="noindex"> }
-	</head>
-	<body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJ757DK"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-		<header>
-			<Navbar />
-		</header>
-		<slot />
-		<Footer />
-		<script>
-			import "../scripts/bootstrap/bootstrap.bundle"
-			</script>
-			
-	</body>
+    <head>
+        <script>
+            import "../scripts/google/googleTagManager.js";
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <title>{title}</title>
+        {noindex && <meta name="robots" content="noindex" />}
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript
+            ><iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-NJ757DK"
+                height="0"
+                width="0"
+                style="display:none;visibility:hidden"></iframe></noscript
+        >
+        <!-- End Google Tag Manager (noscript) -->
+        <header>
+            <Navbar />
+        </header>
+        <slot />
+        <Footer />
+        <script>
+            import "../scripts/bootstrap/bootstrap.bundle";
+        </script>
+        <script src="//code.tidio.co/pkamsai1axvz4zaalglhbl6i2hq1dpgl.js" async
+        ></script>
+    </body>
 </html>
-
