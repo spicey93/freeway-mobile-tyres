@@ -1,6 +1,5 @@
 ---
 import Quote from "./Quote.astro";
-import Features from "./Features.astro";
 import Reviews from "./Reviews.astro";
 
 const { bgImg, heading, tagline } = Astro.props;
@@ -17,7 +16,6 @@ const { bgImg, heading, tagline } = Astro.props;
                 </h2>
                 <p class="lead text-center fs-3 text-lg-start">{tagline}</p>
                 <Reviews />
-                <Features />
             </div>
             <div
                 class="col-12 offset-lg-2 col-lg-4 d-flex justify-content-center align-items-center flex-column"
