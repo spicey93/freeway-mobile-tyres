@@ -1,13 +1,48 @@
 <!-- Widget #1 -->
-<section class="container py-5">
+<!-- <section class="container py-5">
     <div data-romw-token="DPQY54pL8Qxys1UdVvm6wNozLTEfdOPGmq97CKDNJl6ONyqQbE">
     </div>
     <script
         src="https://reviewsonmywebsite.com/js/v2/embed.js?id=3da6a5fe6e118e09b7213aa5a1bd08cf"
         type="text/javascript"
     ></script>
-</section>
+</section> -->
 
 <!-- Widget #2 -->
 <!-- <div data-romw-token="swg4zGWdi21VS0kPLM6HW4Ry0hPv78Syb4vL2kNkpV9Aqk4J5C"></div> 
 <script src="https://reviewsonmywebsite.com/js/v2/embed.js?id=3da6a5fe6e118e09b7213aa5a1bd08cf" type="text/javascript"></script> -->
+
+---
+import TestimonialCard from "./TestimonialCard.astro";
+---
+
+<div class="bg-light py-5">
+    <div class="container">
+        <h3 class="text-center fs-2">What Our Customers Say</h3>
+        <p class="text-center">With almost 600 five star reviews on Google, you can trust us to look after your vehicle!</p>
+
+        <div class="row g-3">
+            <div class="col-12 col-md-6 col-xl-3">
+                <TestimonialCard customerName="Simon">
+                <p class="small">Prompt friendly service from a local independent company. My blown tyres were sorted fast with minimal fuss. Had a chat with the owner, decent chap with a good business head and attitude. Would not hesitate to recommend</p>
+                </TestimonialCard>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3">
+                <TestimonialCard customerName="Christine Chadwick">
+                    <p class="small">Excellent service. Came out to fit our spare tyre in a multi storey car park on New Year's Day. Jake was polite, friendly and professional. We were very appreciative of the prompt and efficient help. Highly recommended thank you.</p>
+                </TestimonialCard>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3">
+                <TestimonialCard customerName="James Halls">
+                    <p class="small">Friendly and reliable service. Arrived at an agreed time and did a fantastic job. Even the rims were wiped clean. Really nice guy would recommend.</p>
+                </TestimonialCard>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3">
+                <TestimonialCard customerName="Lisa Birch">
+                    <p class="small">Called and discussed replacement on Friday morning, gentlemen explained he would be with me to replace my flat tyre within the morning. The guy arrived replaced tyre with a 5* service would definitely recommend fab service</p>
+                </TestimonialCard>
+            </div>
+        </div>
+
+    </div>
+</div>
